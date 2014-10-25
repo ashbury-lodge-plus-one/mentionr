@@ -35,7 +35,9 @@ var searchItem = function(item) {
         throw error;
       } else {
         var item = JSON.parse(body);
-        var wordCount = Words.find({}).count();
+        request('http://localhost:9000', function(err, res, body){
+          console.log(JSON.parse.body);
+        })
         for(var i=0; i<wordCount; i++){
           var re = new RegExp(words[i]);
           if(re.test(item.text)){
