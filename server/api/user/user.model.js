@@ -15,9 +15,7 @@ var UserSchema = new Schema({
   words:[{ id: String, word: String }]
 });
 
-/**
- * Virtuals
- */
+// Virtuals
 UserSchema
   .virtual('password')
   .set(function(password) {
@@ -48,10 +46,6 @@ UserSchema
       'role': this.role
     };
   });
-
-/**
- * Validations
- */
 
 // Validate empty email
 UserSchema
@@ -88,9 +82,7 @@ var validatePresenceOf = function(value) {
   return value && value.length;
 };
 
-/**
- * Pre-save hook
- */
+// Pre-save hook
 UserSchema
   .pre('save', function(next) {
     if (!this.isNew) return next();
@@ -101,38 +93,16 @@ UserSchema
       next();
   });
 
-/**
- * Methods
- */
+// Methods
 UserSchema.methods = {
-  /**
-   * Authenticate - check if the passwords are the same
-   *
-   * @param {String} plainText
-   * @return {Boolean}
-   * @api public
-   */
   authenticate: function(plainText) {
     return this.encryptPassword(plainText) === this.hashedPassword;
   },
 
-  /**
-   * Make salt
-   *
-   * @return {String}
-   * @api public
-   */
   makeSalt: function() {
     return crypto.randomBytes(16).toString('base64');
   },
 
-  /**
-   * Encrypt password
-   *
-   * @param {String} password
-   * @return {String}
-   * @api public
-   */
   encryptPassword: function(password) {
     if (!password || !this.salt) return '';
     var salt = new Buffer(this.salt, 'base64');
