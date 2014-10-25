@@ -3,7 +3,7 @@
 var Word = require('./user.model');
 
 var handleError = function(res, err) {
-  return res.json(422, err);
+  return res.json(500, err);
 };
 
 exports.index = function (req, res, next) {
@@ -15,12 +15,15 @@ exports.index = function (req, res, next) {
 };
 
 exports.create = function (req, res, next) {
-  Word.findOne(req.body)
-  var newWord = new Word(req.body);
-  newWord.save(function(err, word) {
+  Word.findOne(req.body, function(err, word) {
     if (err) return handleError(res, err);
-    res.json(word);
-  });
+    if (word) return handleError(res, err);
+    var newWord = new Word(req.body);
+    newWord.save(function(err, word) {
+      if (err) return handleError(res, err);
+      res.json(word);
+    });
+  })
 };
 
 exports.show = function (req, res, next) {
