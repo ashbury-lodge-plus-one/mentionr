@@ -1,5 +1,6 @@
 var request = require('request');
 var mongoose = require('mongoose');
+var Word = require('./api/word/word.model');
 var startPoint = 8447299;
 
 exports.watchData = function(req, res, next) {
@@ -35,15 +36,15 @@ var searchItem = function(item) {
         throw error;
       } else {
         var item = JSON.parse(body);
-        request('http://localhost:9000', function(err, res, body){
-          console.log(JSON.parse.body);
-        })
-        for(var i=0; i<wordCount; i++){
-          var re = new RegExp(words[i]);
-          if(re.test(item.text)){
-            //save link to users database 
+        request('http://localhost:9000/api/words', function(err, res, body){
+          var body = JSON.parse(body);
+          for(var i=0; i<body.length; i++){
+            var re = new RegExp(body[i].word);
+            if(re.test(item.text)){
+              console.log('Save to DB Bro', body[i].word);
+            }
           }
-        }
+        })
       }
     });
 };
