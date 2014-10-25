@@ -40,7 +40,6 @@ angular.module('mentionrApp')
         for (var i = 0; i < Math.ceil(days); i++) {
           var d = dateMin + i*60*60*24;
           var d2 = new Date(d*1000);
-          
           var d3 = d2.getMonth() + '/' + d2.getDate() + '/' + d2.getFullYear();
           if (collateDates[d3] === undefined) {
 
