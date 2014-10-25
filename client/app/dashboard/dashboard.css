@@ -1,0 +1,195 @@
+.leftDrawer {
+	background-color: #212730;
+	color: white;
+	bottom:0px;
+	top: 0px;
+	min-height:100%;
+}
+
+.rightContainer {
+	min-height:100%;
+	padding: 0px;
+}
+
+.logo {
+	border-bottom: 1px solid rgba(255,255,255,.1);
+	margin: -15px;
+	padding-top: 30px;
+	padding-bottom: 25px;
+	text-align: center;
+	font-weight: 100;
+}
+.words {
+	margin: -15px;
+	padding: 25px;
+}
+
+.addWordDiv {
+	background-color: #2B333E;
+	width: 100%;
+	height: 65px;
+	position: absolute;
+	bottom: 25px;
+	margin: -15px;
+	padding: 22px;
+}
+#addInput {
+	border: none;
+	background-color: transparent; 
+	color: rgba(255,255,255,.3);
+	margin-left: 10px;
+	line-height: 12px;
+	font-size: .8em;
+}
+::-webkit-input-placeholder { /* WebKit browsers */
+    color:    rgba(255,255,255,.3);
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    rgba(255,255,255,.3);
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    rgba(255,255,255,.3);
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+   color:    rgba(255,255,255,.3);
+}
+textarea:focus, input:focus{
+    outline: 0;
+}
+
+.wordsTitle {
+	color: rgba(255,255,255,.3);
+	font-weight: 500;
+	font-size: 1em;
+}
+
+.mainTop {
+	background-color: #3D444F;
+	color: white;
+	min-height: 50%;
+}
+
+.mainBottom {
+	background-color: #fff;
+	min-height: 50%;
+	padding: 0px;
+}
+
+.listWord {
+	display: inline;
+}
+.pill {
+	color: rgba(0,0,0,.4);
+	display: inline;
+	float: right;
+	font-size: .7em;
+	font-weight: 600;
+}
+
+.pillLeft {
+	background-color: #2F5D6E;
+	padding: 3px;
+	padding-left: 9px;
+	border-radius: 10px 0px 0px 10px;
+	display: inline;
+}
+
+.pillRight {
+	margin-left: 3px;
+	background-color: #356650;
+	padding: 3px;
+	padding-right: 7px;
+	border-radius: 0px 10px 10px 0px;
+	display: inline
+}
+
+.leftActive {
+	background-color: #48C3E8;
+	color: rgba(0,0,0,.7);
+}
+
+.rightActive {
+	background-color: #56E78D;
+	color: rgba(0,0,0,.7);
+}
+
+.row {
+	min-height:100%;
+}
+
+.topBar {
+ padding: 20px;
+}
+
+.wordIcon {
+	display: inline;
+	float: left;
+	font-size: 30px;
+}
+
+.wordTitle {
+	display: inline;
+	margin-left: 5px;
+	font-size: .9em;
+}
+
+.leftIcon {
+	display: inline;
+}
+
+.table > thead > tr > th,
+.table > tbody > tr > th, 
+.table > tfoot > tr > th, 
+.table > thead > tr > td, 
+.table > tbody > tr > td, 
+.table > tfoot > tr > td{
+  border-top: none !important;
+  border-bottom: none !important;
+
+}
+.table {
+	
+}
+.table-striped {
+	margin-top: 0px;
+	padding-left: 25px;
+
+}
+.table > thead > tr > th{
+  font-size: .8em !important;
+  padding-top: 20px;
+  padding-left: 25px;
+  padding-bottom: 20px;
+  color: #545454;
+}
+.table > tbody >  tr > td {
+  padding-left: 25px;
+}
+
+.table-striped > tbody > tr:nth-child(odd) > td, 
+.table-striped > tbody > tr:nth-child(odd) > th {
+	background-color: #f2f2f2;
+}
+/* profile details*/
+.userDetails {
+	display: inline;
+	float: right;
+	padding: 0px;
+}
+
+.profilePhoto {
+	border-radius: 100%;
+	width: 25px;
+	margin: 0px;
+	float: right;
+	display: inline;
+}
+
+.username {
+	font-size: .9em;
+	line-height: 25spx;
+	margin-right: 10px;
+	display: inline;
+}

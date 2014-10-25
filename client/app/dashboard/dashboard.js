@@ -5,7 +5,7 @@ angular.module('mentionrApp')
     $stateProvider
       .state('dashboard', {
         url: '/dashboard',
-        templateUrl: 'app/dashboard/dashboard/dashboard.html',
+        templateUrl: 'app/dashboard/dashboard.html',
         controller: 'DashboardCtrl'
       });
   });
