@@ -1,6 +1,6 @@
 'use strict';
 
-var Word = require('./user.model');
+var Word = require('./word.model');
 
 var handleError = function(res, err) {
   return res.json(500, err);
