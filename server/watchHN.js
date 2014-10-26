@@ -12,7 +12,6 @@ var saveEntry = function(item, id, entry, theSentiment) {
     by: item.by,
     date: item.time,
     body: item.text,
-    score: item.score,
     sentiment: theSentiment
   };
 
@@ -42,7 +41,8 @@ var searchItem = function(item) {
               var re = new RegExp(body[i].word);
               if (re.test(item.text)) {
                 var theSentiment = sentiment(item.text);
-                saveEntry(item, body[i]._id, body[i].word, theSentiment);
+                console.log(theSentiment.score);
+                saveEntry(item, body[i]._id, body[i].word, theSentiment.score);
               }
             } 
           }
