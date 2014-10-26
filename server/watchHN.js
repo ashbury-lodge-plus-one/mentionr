@@ -1,9 +1,9 @@
 var request = require('request');
-var mongoose = require('mongoose');
 var sentiment = require('sentiment');
 var Word = require('./api/word/word.model');
 var startPoint = 8510405; // Arbirtary...
 var historyPoint = 8499000;
+
 
 var saveEntry = function(item, id, entry, theSentiment) {
   var article = {
@@ -68,14 +68,13 @@ var searchItem = function(item) {
         throw error;
       } else {
         var item = JSON.parse(body);
-        request('http://localhost:9000/api/words', function(err, res, body) {
-          body = JSON.parse(body);
+        Word.find({}, '-articles',function(err, words) {  // Hold the articles
           if (item && item.type !== null) {
-            for (var i = 0; i < body.length; i++){
-              var re = new RegExp(body[i].word, 'gi');
+            for (var i = 0; i < words.length; i++){
+              var re = new RegExp(words[i].word, 'gi');
               if (re.test(item.text)) {
                 var theSentiment = getSentiment(item.text);
-                saveEntry(item, body[i]._id, body[i].word, theSentiment);
+                saveEntry(item, words[i]._id, words[i].word, theSentiment);
               }
             } 
           }
@@ -96,7 +95,7 @@ exports.watchData = function(req, res, next) {
         var currentMax = JSON.parse(body);
         if (currentMax > startPoint) {
           var newItemCount = currentMax - startPoint;
-          for(var i=0; i<newItemCount; i++){
+          for(var i = 0; i < newItemCount; i++){
             var currentItem = (startPoint + i);
             searchItem(currentItem);
           }

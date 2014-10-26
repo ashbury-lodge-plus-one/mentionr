@@ -1,6 +1,3 @@
-/**
- * Main application file
- */
 'use strict';
 
 // Set default node environment to development
@@ -10,6 +7,7 @@ var express = require('express');
 var mongoose = require('mongoose');
 var config = require('./config/environment');
 var watch = require('./watchHN.js');
+var mail = require('./mail.js');
 
 // Connect to database
 mongoose.connect(config.mongo.uri, config.mongo.options);
