@@ -2,7 +2,6 @@
 
 angular.module('mentionrApp')
   .controller('WordCtrl', function ($location, $scope, visualizationData, Auth) {
-
     $scope.isLoggedIn = Auth.isLoggedIn;
     $scope.isAdmin = Auth.isAdmin;
     $scope.getCurrentUser = Auth.getCurrentUser();
@@ -12,6 +11,7 @@ angular.module('mentionrApp')
       $location.path('/login');
     };    
     $scope.allMentions = visualizationData.all
+    console.log($scope.allMentions)
     if (visualizationData.x.length === 1) {
       visualizationData.x.unshift('10/24/2014')
       visualizationData.y.unshift('0')

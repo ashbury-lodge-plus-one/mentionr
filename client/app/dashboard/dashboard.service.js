@@ -25,11 +25,7 @@ angular.module('mentionrApp')
     //Returned Object with x array corresponding y array and total length
 
     var populateVisualizer = function(wordId){
-<<<<<<< HEAD
-      return $http.get('/api/words/544c6db031ad8949010bf5fc')
-=======
       return $http.get('/api/words/' + wordId)
->>>>>>> add new routes for individual messages and set query based on in in resolve
         .then(function(stats){
           stats = stats.data;
           var collateDates = {};
