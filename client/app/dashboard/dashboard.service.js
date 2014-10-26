@@ -1,8 +1,6 @@
 'use strict';
 
 //Assume request
-
-
 angular.module('mentionrApp')
   .factory('dashboardFactory', function ($http) {
     // Service logic

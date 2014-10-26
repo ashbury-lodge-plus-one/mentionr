@@ -32,9 +32,11 @@ exports.addWord = function(req, res, next) {
         if (user.words.indexOf(word) === -1) {
           user.words.push(word);
         }
-        // TODO: Remove me, handle on client
         user.save(function(err, user) {
           fetchData(word._id, word.word);
+          
+          delete user.password;
+          delete user.salt;
           res.json(user);
         });
       } else {
