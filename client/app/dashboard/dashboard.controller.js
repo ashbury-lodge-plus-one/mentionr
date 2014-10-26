@@ -6,11 +6,15 @@ angular.module('mentionrApp')
     $scope.isLoggedIn = Auth.isLoggedIn;
     $scope.isAdmin = Auth.isAdmin;
     $scope.user = Auth.getCurrentUser();
+    $scope.bannedWords = {};
+
 
     $scope.submit = function(word, id) {
       dashboardFactory.submitWord(word, id)
         .then(function(resp) {
-          $scope.user.words.push(resp.data);
+          if (resp) {
+            $scope.user.words.push(resp.data);
+          }
         });
       };
     $scope.getCurrentUser = Auth.getCurrentUser();
