@@ -22,6 +22,7 @@ angular.module('mentionrApp')
           var collateDates = {};
           var output = {x: [], y: [], all: stats.articles, total: stats.articles.length};
           var dateMin = stats.articles[0].date;
+          console.log("VERY IMPORTANT:", dateMin);
           var dateMax = stats.articles[0].date;
           for (var i = 0; i < stats.articles.length; i++) {
             dateMin = stats.articles[i].date < dateMin ? stats.articles[i].date : dateMin;
@@ -36,20 +37,28 @@ angular.module('mentionrApp')
             }
           }
         
-          var days = (dateMax-dateMin)/(60*60*24);
+          var days = (dateMax-dateMin)/(1000*60*60*24);
+          console.log("DAYS:",days)
           
           var array = [];
           
           for (var j = 0; j < Math.ceil(days); j++) {
-            var d = dateMin + j*60*60*24;
+            console.log(j);
+            var test = new Date(parseInt(dateMin)*1000)
+            console.log(test.toDateString())
+            var d = parseFloat(dateMin) + (j*60*60*24);
+            console.log(d, "WHY ARE YOU GROWING!");
             var d2 = new Date(d*1000);
+            console.log("d2", d2)
             var d3 = d2.getMonth() + '/' + d2.getDate() + '/' + d2.getFullYear();
             if (collateDates[d3] === undefined) {
-              array.push({date: d3, data: {count: 0, urls: []}});
+              array.push({date: d3, data: {count: 0, urls: []} });
             } else {
               array.push({date: d3, data: collateDates[d3]});
             }
+            console.log(d3);
           }
+
           for (var ii = 0; ii < array.length; ii++) {
             output.x.push(array[ii].date);
             output.y.push(array[ii].data.count);

@@ -15,9 +15,7 @@ angular.module('mentionrApp')
 	        }
 	    ]
 	};
-	console.log($scope.WordChart)
 	$scope.myChartOptions = {}
-  	console.log(visualizationData)
   	$scope.vizData = visualizationData
     $scope.message = 'Hello';
   });

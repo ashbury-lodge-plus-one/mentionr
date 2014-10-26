@@ -159,9 +159,7 @@ textarea:focus, input:focus{
 	padding-left: 25px;
 
 }
-.graph {
-	z-index: 100;
-}
+
 .table > thead > tr > th{
   font-size: .8em !important;
   padding-top: 20px;
