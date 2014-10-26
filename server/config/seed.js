@@ -28,7 +28,15 @@ User.find({}).remove(function() {
 // Word.find({}).remove(function() {
 //   Word.create({
 //     word: 'javascript',
-//     articles: []
+//     articles: [{
+//       title: 'javascript is fun',
+//       storyUrl: 'https://google.com',
+//       body: 'Stuff goes here...',
+//       url: 'http://anothercoolurl.com',
+//       date: '1414302801',
+//       by: 'Bob',
+//       sentiment: 25
+//     }]
 //   }, function() {
 //       console.log('finished populating words');
 //     }

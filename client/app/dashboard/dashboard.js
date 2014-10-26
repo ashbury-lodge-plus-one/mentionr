@@ -22,12 +22,11 @@ angular.module('mentionrApp')
       	controller: 'WordCtrl',
       	resolve: {
       		visualizationData : [ 'dashboardFactory', function(dashboardFactory) {
-        		return dashboardFactory.populateVisualizer("544c8d528f5b6dd016d47e2e").then(function(data){
-        			console.log(data)
-					return data;
-        		});
-        	}]
-
+        		return dashboardFactory.populateVisualizer('544c8d015b5aa50000c7ef59')
+              .then(function(data){
+      					return data;
+          		});
+          	}]
       	}
-      })
+      });
   });

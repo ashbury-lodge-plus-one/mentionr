@@ -11,7 +11,7 @@ angular.module('mentionrApp')
       });
     };
 
-    var submitWord = function(word,userId){
+    var submitWord = function(word, userId){
       $http({
         url: '/api/words/',
         method: 'POST',

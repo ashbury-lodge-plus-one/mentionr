@@ -12,7 +12,6 @@ var WordSchema = new Schema({
     url: String,
     date: String,
     by: String,
-    score: Number,
     sentiment: Number
   }],
 });
