@@ -15,7 +15,8 @@ angular.module('mentionrApp')
     //Get Request for the Word Visualiser - Trigger on Click of Word from Left Bar
     //Returned Object with x array corresponding y array and total length
     var populateVisualizer = function(wordId){
-      $http.get('/api/words/'+wordId).success(function(stats){
+      // return {x:[1,2,3,4,5,6,7], y:[2,4,3,5,4,2,1], all: {}, total: 21}
+      return $http.get('/api/words/'+wordId).success(function(stats){
         var collateDates = {};
         var output = {x: [], y: [], all: stats, total: stats.length};
         var dateMin = stats[0].date;
@@ -47,14 +48,13 @@ angular.module('mentionrApp')
             array.push({date: d3, data: collateDates[d3]});
           }
         }
-        
         for (var ii = 0; ii < array.length; ii++) {
           output.x.push(array[ii].date);
           output.y.push(array[ii].data.count);
         }
         
         return output;
-    });
+      });
     
     };
     
