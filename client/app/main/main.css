@@ -145,7 +145,10 @@
     text-align: center;
    
 }
-
+.bottomSignUp {
+    font-size: 15px;
+    margin:15px;
+}
 .pricing {
     background-color: white;
     padding-top: 60px;
