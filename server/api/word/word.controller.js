@@ -20,8 +20,14 @@ exports.addWord = function(req, res, next) {
     if (err) {
       return next(err);
     }
-    if (!word) {
-      res.send(401);
+    if (word) {
+      User.findById(req.body.userId, function(err, user) {
+        if (user.words.indexOf(word) === -1) {
+          user.words.push(word);
+        }
+        user.save();
+        res.json(word);
+      });
     }
     else {
       Word.findOne(req.body, function(err, word) {
