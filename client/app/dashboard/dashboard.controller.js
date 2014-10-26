@@ -15,7 +15,7 @@ angular.module('mentionrApp')
     }
 
     $scope.submit = function(){
-      var userId = $scope.getCurrentUser || 1;
+      var userId = $scope.getCurrentUser.userId || 1;
       console.log("word",$scope.wordToSubmit);
       console.log("ID:",userId)
       dashboardFactory.submitWord($scope.wordToSubmit,userId);
