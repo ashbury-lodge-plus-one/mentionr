@@ -14,10 +14,10 @@ angular.module('mentionrApp')
       	controller: 'WordCtrl',
       	resolve: {
       		visualizationData : [ 'dashboardFactory', function(dashboardFactory) {
-          	return dashboardFactory.populateVisualizer("544c9bdf808d429d5c265e06").then(function(data){
-          		console.log(data)
-    					return data;
-            });
+          	return dashboardFactory.populateVisualizer('544c9ad923d2a800002ea8a8')
+              .then(function(data){
+      					return data;
+              });
         	}]
       	}
       });
