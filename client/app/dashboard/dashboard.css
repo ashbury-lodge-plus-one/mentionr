@@ -68,13 +68,14 @@ textarea:focus, input:focus{
 .mainTop {
 	background-color: #3D444F;
 	color: white;
-	min-height: 50%;
+	height: 50%;
 }
 
 .mainBottom {
 	background-color: #fff;
-	min-height: 50%;
+	height: 50%;
 	padding: 0px;
+	overflow: scroll;
 }
 
 .listWord {

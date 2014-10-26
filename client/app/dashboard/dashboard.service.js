@@ -17,7 +17,7 @@ angular.module('mentionrApp')
     var populateVisualizer = function(wordId){
       // return {x:[1,2,3,4,5,6,7], y:[2,4,3,5,4,2,1], all: {}, total: 21}
 
-      return $http.get('/api/words/544c5f7509f77ee647ca3f16')
+      return $http.get('/api/words/544c622a5a6c2b534900717a')
         .then(function(stats){
           stats = stats.data;
           var collateDates = {};
