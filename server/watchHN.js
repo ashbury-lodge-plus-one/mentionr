@@ -1,9 +1,10 @@
 var request = require('request');
 var mongoose = require('mongoose');
+var sentiment = require('sentiment');
 var Word = require('./api/word/word.model');
 var startPoint = 8509943; // Arbirtary...
 
-var saveEntry = function(item, id, entry) {
+var saveEntry = function(item, id, entry, theSentiment) {
   var article = {
     title: item.title,
     storyUrl: item.url,
@@ -12,7 +13,7 @@ var saveEntry = function(item, id, entry) {
     date: item.time,
     body: item.text,
     score: item.score,
-    sentiment: item.sentiment || 0
+    sentiment: theSentiment || 0
   };
 
   Word.findOne({_id: id}, function(err, word) {
@@ -40,7 +41,8 @@ var searchItem = function(item) {
           for (var i = 0; i < body.length; i++){
             var re = new RegExp(body[i].word);
             if (re.test(item.text)) {
-              saveEntry(item, body[i]._id, body[i].word);
+              var theSentiment = sentiment(item.text);
+              saveEntry(item, body[i]._id, body[i].word, theSentiment);
             }
           }
         })
