@@ -181,10 +181,16 @@ textarea:focus, input:focus{
 .row {
 	min-height:100%;
 }
-
+.emptyState {
+	color: rgba(255,255,255,.6);
+	width: 550px;
+	 margin: 0 auto;
+	 text-align: center;
+}
 .topBar {
  padding: 20px;
  color: white;
+
 }
 .wordItem {
 	margin-top: 15px;

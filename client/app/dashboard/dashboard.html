@@ -46,6 +46,8 @@
 	</div>
 	<div class="bodyCont">
 		<div class="rightContainer" ui-view>
+		<div class="emptyState" ng-if="user.words < 1">
+		<h2>It appears you don't yet have any words.  To add a new word, type it into the bottom left and click it in your words list.</h2> <p>Note: if this is your first time submitting this words, it may take a few moments to add to your word list.</p></div>
 	</div>
 	</div>
 </div>
