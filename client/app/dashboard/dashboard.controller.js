@@ -1,7 +1,12 @@
 'use strict';
 
 angular.module('mentionrApp')
-  .controller('DashboardCtrl', function ($scope, visualizationData) {
+  .controller('DashboardCtrl', function ($scope, visualizationData, Auth) {
+  	console.log(Auth.getCurrentUser())
+    $scope.isLoggedIn = Auth.isLoggedIn;
+    $scope.isAdmin = Auth.isAdmin;
+    $scope.getCurrentUser = Auth.getCurrentUser();
+
     $scope.allMentions = visualizationData.all
     if (visualizationData.x.length === 1) {
       visualizationData.x.unshift('10/24/2014')
