@@ -34,7 +34,7 @@ exports.addWord = function(req, res, next) {
         }
         user.save(function(err, user) {
           fetchData(word._id, word.word);
-          
+
           delete user.password;
           delete user.salt;
           res.json(user);
