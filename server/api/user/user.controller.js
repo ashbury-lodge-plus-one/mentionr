@@ -1,12 +1,17 @@
 'use strict';
 
 var User = require('./user.model');
+var Word = require('../word/word.model');
 var passport = require('passport');
 var config = require('../../config/environment');
 var jwt = require('jsonwebtoken');
 
 var validationError = function(res, err) {
   return res.json(422, err);
+};
+
+var handleError = function(res, err) {
+  return res.json(500, err);
 };
 
 exports.index = function(req, res) {
@@ -61,6 +66,34 @@ exports.changePassword = function(req, res, next) {
     }
   });
 };
+
+exports.addWord = function(req, res, next) {
+  Word.find({word: req.body.word}, function(err, word) {
+    if (err) {
+      return next(err);
+    }
+    if (!word) {
+      res.send(401);
+    }
+    else {
+      Word.findOne(req.body, function(err, word) {
+        if (err) return handleError(res, err);
+        if (word) res.send(401);
+        var newWord = new Word(req.body);
+        newWord.save(function(err, word) {
+          if (err) {
+            return handleError(res, err);
+          }
+          User.find(req.params, function(err, user){
+            user.words.push(word);
+            user.save();
+            res.json(word);
+          });
+        });
+      });
+    }
+  })
+}
 
 exports.me = function(req, res, next) {
   var userId = req.user._id;

@@ -30,7 +30,6 @@ var saveEntry = function(item, id, entry, theSentiment) {
 }
 
 var searchItem = function(item) {
-  console.log(item);
   request('https://hacker-news.firebaseio.com/v0/item/' + item + '.json', function(error, response, body) {
       if (error) {
         throw error;
@@ -39,7 +38,7 @@ var searchItem = function(item) {
         console.log(item);
         request('http://localhost:9000/api/words', function(err, res, body) {
           body = JSON.parse(body);
-          if (item !== null || item['type'] === 'story' || item['type'] === 'poll' || item['type'] === 'comment' || item['type'] === 'job' || item['type'] === 'pollopt') {
+          if (item !== null || item.type !== null) {
             for (var i = 0; i < body.length; i++){
               var re = new RegExp(body[i].word);
               if (re.test(item.text)) {
