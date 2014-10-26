@@ -25,11 +25,9 @@ angular.module('mentionrApp')
 
     //Get Request for the Word Visualiser - Trigger on Click of Word from Left Bar
     //Returned Object with x array corresponding y array and total length
-    var populateVisualizer = function(wordId) {
-      // return {x:[1,2,3,4,5,6,7], y:[2,4,3,5,4,2,1], all: {}, total: 21}
 
-
-      return $http.get('/api/words/544c6b04e1a7202aefb52249')
+    var populateVisualizer = function(wordId){
+      return $http.get('/api/words/544c622a5a6c2b534900717a')
         .then(function(stats){
           stats = stats.data;
           var collateDates = {};

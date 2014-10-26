@@ -39,6 +39,7 @@
 }
 body, html {
     height: 100%;
+    background-color: #3D444F;
 
 }
 .ng-scope {

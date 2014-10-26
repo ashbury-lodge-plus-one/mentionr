@@ -2,7 +2,6 @@
 
 angular.module('mentionrApp')
   .controller('DashboardCtrl', function ($scope, visualizationData) {
-
     $scope.allMentions = visualizationData.all
     if (visualizationData.x.length === 1) {
       visualizationData.x.unshift('10/24/2014')

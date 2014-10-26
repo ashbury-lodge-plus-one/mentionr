@@ -24,6 +24,30 @@
 	padding: 25px;
 }
 
+.loginBox {
+	background-color: #212730;
+	color: white;
+	margin-top: 40px;
+	border-radius: 5px;
+	padding: 20px;
+	text-align: center;
+ 	-webkit-box-shadow: -1px 0px 3px 0px rgba(50, 50, 50, 0.32);
+  	-moz-box-shadow:    -1px 0px 3px 0px rgba(50, 50, 50, 0.32);
+  	box-shadow:         -1px 0px 3px 0px rgba(50, 50, 50, 0.32);
+
+}
+.loginLogo {
+	color:white;
+	text-align: center;
+	font-weight: 200;
+}
+.loginBox h1{
+	font-weight: 200;
+	font-size: 1.3em;
+}
+.authbtn {
+	margin-bottom: 10px;
+}
 .addWordDiv {
 	background-color: #2B333E;
 	width: 100%;
@@ -35,6 +59,33 @@
 }
 #addInput {
 	border: none;
+	background-color: transparent; 
+	color: rgba(255,255,255,.3);
+	margin-left: 10px;
+	line-height: 12px;
+	font-size: .8em;
+}
+
+.login-btn {
+	background-color: transparent;
+	border: 1px solid rgba(255,255,255,.2);
+	border-radius: 15px;
+	width: 100px;
+}
+.login-btn:hover {
+	border: 1px solid rgba(255,255,255,.4);
+
+}
+.btn-register {
+	color: #d3d3d3;
+	margin-left: 20px;
+}
+.btn-register:hover {
+	color: white;
+	text-decoration: none;
+}
+.loginFormInput {
+	border: 1px solid rgba(255,255,255,.2);
 	background-color: transparent; 
 	color: rgba(255,255,255,.3);
 	margin-left: 10px;
