@@ -16,7 +16,8 @@ angular.module('mentionrApp')
         url: '/api/words/',
         method: 'POST',
         data: {userId: userId, word: word}
-      }).success(function(userData){
+      })
+      .success(function(userData){
         return userData;
       });
     };
@@ -26,17 +27,18 @@ angular.module('mentionrApp')
 
     var populateVisualizer = function(wordId){
       return $http.get('/api/words/' + wordId)
-        .then(function(stats){
+        .then(function(stats) {
           stats = stats.data;
           var collateDates = {};
           var output = {x: [], y: [], all: stats.articles, total: stats.articles.length};
           var dateMin = stats.articles[0].date;
           var dateMax = stats.articles[0].date;
+
           for (var i = 0; i < stats.articles.length; i++) {
             dateMin = stats.articles[i].date < dateMin ? stats.articles[i].date : dateMin;
             dateMax = stats.articles[i].date > dateMax ? stats.articles[i].date : dateMax;
-            var temp = new Date(stats.articles[i].date*1000);
-            var dateTime = (temp.getMonth()+1) + '/' + temp.getDate() + '/' + temp.getFullYear();
+            var temp = new Date(stats.articles[i].date * 1000);
+            var dateTime = (temp.getMonth() + 1) + '/' + temp.getDate() + '/' + temp.getFullYear();
 
             if (collateDates[dateTime] === undefined) {
               collateDates[dateTime] = {count: 1, urls: [stats.articles[i].url]};
@@ -46,14 +48,13 @@ angular.module('mentionrApp')
             }
           }
         
-          var days = (dateMax-dateMin)/(60*60*24);
-          
+          var days = (dateMax - dateMin)/(60 * 60 * 24);
           var array = [];
           
-          for (var j = 0; j < Math.ceil(days); j++) {
-            var d = parseFloat(dateMin) + (j*60*60*24);
-            var d2 = new Date(d*1000);
-            var d3 = (d2.getMonth()+1) + '/' + d2.getDate() + '/' + d2.getFullYear();
+          for (i = 0; i < Math.ceil(days); i++) {
+            var d = parseFloat(dateMin) + (i * 60 * 60 * 24);
+            var d2 = new Date(d * 1000);
+            var d3 = (d2.getMonth() + 1) + '/' + d2.getDate() + '/' + d2.getFullYear();
             if (collateDates[d3] === undefined) {
               array.push({date: d3, data: {count: 0, urls: []} });
             } else {
@@ -61,10 +62,11 @@ angular.module('mentionrApp')
             }
           }
 
-          for (var ii = 0; ii < array.length; ii++) {
-            output.x.push(array[ii].date);
-            output.y.push(array[ii].data.count);
+          for (i = 0; i < array.length; i++) {
+            output.x.push(array[i].date);
+            output.y.push(array[i].data.count);
           }
+          
           return output;
         });
     };
