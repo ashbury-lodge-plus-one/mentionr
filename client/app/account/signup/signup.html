@@ -1,29 +1,22 @@
 <div class="container">
   <a href="/" class="titleLink"><h2 class="loginLogo"><small>/</small>mentionr<small>/g</small></h2></a>
-
   <div class="row">
     <div class="col-sm-4 col-sm-offset-4 loginBox">
-
     <div class="col-sm-12">
-
       <h1>SIGN UP</h1>
     </div>
     <div class="col-sm-12">
       <form class="form" name="form" ng-submit="register(form)" novalidate>
-
         <div class="form-group" ng-class="{ 'has-success': form.name.$valid && submitted,
                                             'has-error': form.name.$invalid && submitted }">
-
           <input type="text" name="name"  placeholder="Name" class="form-control loginFormInput" ng-model="user.name"
                  required/>
           <p class="help-block" ng-show="form.name.$error.required && submitted">
             A name is required
           </p>
         </div>
-
         <div class="form-group" ng-class="{ 'has-success': form.email.$valid && submitted,
                                             'has-error': form.email.$invalid && submitted }">
-
           <input type="email" name="email" class="form-control loginFormInput" placeholder="Email" ng-model="user.email"
                  required
                  mongoose-error/>
@@ -37,10 +30,8 @@
             {{ errors.email }}
           </p>
         </div>
-
         <div class="form-group" ng-class="{ 'has-success': form.password.$valid && submitted,
                                             'has-error': form.password.$invalid && submitted }">
-
           <input type="password" name="password" placeholder="Password" class="form-control loginFormInput" ng-model="user.password"
                  ng-minlength="3"
                  required
@@ -53,7 +44,6 @@
             {{ errors.password }}
           </p>
         </div>
-
         <div>
           <button class="login-btn btn-login" type="submit">
             Sign up
@@ -62,7 +52,6 @@
             Login
           </a>
         </div>
-
         </div>
       </form>
     </div>
