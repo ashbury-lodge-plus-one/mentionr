@@ -16,7 +16,14 @@ angular.module('mentionrApp')
             $scope.user.words.push(resp.data);
           }
         });
-      };
+    };
+
+    $scope.removeWord = function(item, word, id) {
+      var i = item.$index;
+      dashboardFactory.removeWord(word._id, id);
+      $scope.user.words.splice(i, 1);
+    };
+
     $scope.getCurrentUser = Auth.getCurrentUser();
     $scope.words = Auth.getCurrentUser().words;
     $scope.logout = function() {

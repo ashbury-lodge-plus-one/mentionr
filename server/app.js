@@ -28,7 +28,7 @@ server.listen(config.port, config.ip, function () {
 
 // Period Tasks
 // TODO: Setup as CRON
-setInterval(mail.sendMail, 1000 * 60 * 60);
+setTimeout(mail.sendMail, 1000 * 60 * 60);
 watch.watchData();
 
 // Expose app

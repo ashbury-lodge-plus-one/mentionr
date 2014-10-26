@@ -3,7 +3,7 @@
 	<div class="words">
 		<h3 class="wordsTitle">WORDS</h3>
 		<div class="wordItem" ng-repeat="word in user.words">
-			<span ng-click="" class="glyphicon glyphicon-remove deleteBtn"></span>
+			<span ng-click="removeWord(this, word, user._id);" class="glyphicon glyphicon-remove deleteBtn"></span>
 			<a href="/dashboard/word/{{word._id}}"><p class="listWord">{{word.word}}</p></a>
 					<div class="pill">
 						<span class="pillLeft leftActive">
