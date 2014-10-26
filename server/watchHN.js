@@ -118,7 +118,7 @@ exports.historyData = function(id, word) {
           throw error;
         } else {
           var item = JSON.parse(body);
-          if (item !== null || item.type !== null) {
+          if (item && item.type !== undefined) {
             var re = new RegExp(word);
             if (re.test(item.text)) {
               var theSentiment = getSentiment(item.text);
