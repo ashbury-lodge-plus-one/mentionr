@@ -10,7 +10,7 @@
 
 .textCont {
     margin: 0 auto;
-    margin-top: 300px;
+    margin-top: 20%;
     width: 500px;
 }
 
@@ -109,11 +109,12 @@
     right: 0px;
     width: 100%;
     height: 100%;
-    opacity: 0%;
-
+}
+.servicesRow {
+    margin-right: 0px;
+    margin-left: 0px;
 }
 .graphCont:hover {
-    opacity: 100%;
     background-color: rgba(0,0,0,.4)
 }
 .about p {
