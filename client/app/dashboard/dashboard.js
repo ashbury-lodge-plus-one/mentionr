@@ -6,15 +6,7 @@ angular.module('mentionrApp')
       .state('dashboard', {
         url: '/dashboard',
         templateUrl: 'app/dashboard/dashboard.html',
-        controller: 'DashboardCtrl',
-        // resolve: {
-     //    	visualizationData : [ 'dashboardFactory', function(dashboardFactory) {
-     //    		return dashboardFactory.populateVisualizer("544c622a5a6c2b534900717a").then(function(data){
-					// return data;
-     //    		});
-     //    	}]
-        // },
-        // authenticate: true
+        controller: 'DashboardCtrl'
       })
       .state('dashboard.word', {
       	url: '/word/:wordId',
