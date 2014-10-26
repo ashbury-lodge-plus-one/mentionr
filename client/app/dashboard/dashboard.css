@@ -154,6 +154,7 @@ textarea:focus, input:focus{
 	background-color: #356650;
 	padding: 3px;
 	padding-right: 7px;
+	padding-left: 5px;
 	border-radius: 0px 10px 10px 0px;
 	display: inline
 }
@@ -175,7 +176,9 @@ textarea:focus, input:focus{
 .topBar {
  padding: 20px;
 }
-
+.wordItem {
+	margin-bottom: 15px;
+}
 .wordIcon {
 	display: inline;
 	float: left;

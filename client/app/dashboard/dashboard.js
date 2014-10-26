@@ -7,12 +7,27 @@ angular.module('mentionrApp')
         url: '/dashboard',
         templateUrl: 'app/dashboard/dashboard.html',
         controller: 'DashboardCtrl',
-        resolve: {
-        	visualizationData : [ 'dashboardFactory', function(dashboardFactory) {
-        		return dashboardFactory.populateVisualizer().then(function(data){
+        // resolve: {
+     //    	visualizationData : [ 'dashboardFactory', function(dashboardFactory) {
+     //    		return dashboardFactory.populateVisualizer("544c622a5a6c2b534900717a").then(function(data){
+					// return data;
+     //    		});
+     //    	}]
+        // },
+        // authenticate: true
+      })
+      .state('dashboard.word', {
+      	url: '/word/:wordId',
+      	templateUrl: 'app/dashboard/word.html',
+      	controller: 'WordCtrl',
+      	resolve: {
+      		visualizationData : [ 'dashboardFactory', function(dashboardFactory) {
+        		return dashboardFactory.populateVisualizer("544c622a5a6c2b534900717a").then(function(data){
+        			console.log(data)
 					return data;
         		});
         	}]
-        }
-      });
+
+      	}
+      })
   });
