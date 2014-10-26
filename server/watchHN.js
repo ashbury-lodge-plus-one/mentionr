@@ -1,9 +1,10 @@
 var request = require('request');
 var mongoose = require('mongoose');
 var Word = require('./api/word/word.model');
-var startPoint = 8447299; // Arbirtary...
+var startPoint = 8509943; // Arbirtary...
 
 var saveEntry = function(item, id, entry) {
+  console.log('save');
   var article = {
     title: item.title,
     storyUrl: item.url,
@@ -60,8 +61,13 @@ exports.watchData = function(req, res, next) {
         var currentMax = JSON.parse(body);
         if (currentMax > startPoint) {
           var newItemCount = currentMax - startPoint;
+          console.log(newItemCount);
+          for(var i=0; i<newItemCount; i++){
+            var currentItem = (newItemCount + i);
+            searchItem(currentItem);
+            console.log('here');
+          }
           startPoint = currentMax;
-          searchItem(currentMax);
         }
       }
     });
