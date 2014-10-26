@@ -1,9 +1,7 @@
 .thing-form {
     margin: 20px 0;
 }
-.top {
-    background-image: url('./assets/images/bg-1.jpg')
-}
+
 
 .MainLogo {
     font-weight: 600;
@@ -22,7 +20,11 @@
     color: #F5F5F5;
     text-align: center;
     text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
-    background-image: url('../../assets/images/bg-1.jpg')
+    background-image: url('../../assets/images/bg-1.jpg');
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+
+
 }
 
 .mainBtn {
@@ -65,3 +67,81 @@
     border: 1px solid #FF6347 ;
 
 }
+.about {
+    background-color: white;
+    height: 350px;
+}
+
+.about h3 {
+    font-size: 15px;
+    text-align: center;
+    margin-top: 60px;
+    font-weight: 600;
+    color: #CCCCCC;
+}
+.service {
+    margin: 0px;
+    background-image: url('../../assets/images/graph.jpg');
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    min-height: 400px;
+}
+.graphCont {
+    background-color: transparent;
+    position: absolute;
+    right: 0px;
+    width: 100%;
+    height: 100%;
+    opacity: 0%;
+
+}
+.graphCont:hover {
+    opacity: 100%;
+    background-color: rgba(0,0,0,.4)
+}
+.about p {
+    font-family: 'PT Serif', serif;
+    font-size: 30px;
+    text-align: center;
+    width: 600px;
+    margin: 0 auto;
+}
+
+.services {
+    padding: 0px;
+    height: 400px;
+}
+.featureLabel:hover {
+}
+.featureLabel {
+    width: 100%;
+    color: white;
+    position: absolute;
+    margin-top: 150px;
+    text-align: center;
+}
+
+.pricing {
+    background-color: white;
+    padding-top: 60px;
+    height: 700px;
+}
+.bottom {
+    height: 200px;
+    background-color: #212730;
+    color: white;
+    text-align: center;
+    padding-top: 90px;
+}
+
+
+.price {background-color: #f5f5f5; border: 1px #e5e5e5 solid; border-radius: 3px; margin-bottom: 60px; }
+.priceTitle {background-color: #d8d8d8; padding:10px; text-align: center; color: white; }
+.priceTitle h1 {font-weight: 300; }
+.priceTag {background-color: #eeeeee; padding: 10px; text-align: center; color: #595959; }
+.priceTag #dollarsign { font-size: 30px; margin-top: 35px; margin-left: -20px; position: absolute; }
+.priceTag #amount { font-size: 130px; }
+.priceTag #permonth {font-size: 30px; }
+.priceBody { font-size: 25px; padding: 20px; color: #909090; line-height: 50px; }
+.benefits li { list-style: none; }
+
