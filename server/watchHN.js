@@ -40,7 +40,7 @@ var searchItem = function(item) {
           body = JSON.parse(body);
           if (item !== null || item.type !== null) {
             for (var i = 0; i < body.length; i++){
-              var re = new RegExp(body[i].word);
+              var re = new RegExp(body[i].word, 'gi');
               if (re.test(item.text)) {
                 var theSentiment = sentiment(item.text);
                 saveEntry(item, body[i]._id, body[i].word, theSentiment.score);
