@@ -180,6 +180,14 @@ textarea:focus, input:focus{
 	margin-top: 15px;
 	margin-left: -15px;
 }
+
+.wordItem a {
+	color: white;
+}
+.wordItem a:hover {
+	color: #e0e0e0;
+	text-decoration: none;
+}
 .wordIcon {
 	display: inline;
 	float: left;
@@ -192,7 +200,7 @@ textarea:focus, input:focus{
 	color: rgba(255,255,255,.4)
 }
 .deleteBtn:hover {
-	color: rgba(255,255,255,.9)
+	color: rgba(255,0,0,.9)
 }
 .wordTitle {
 	display: inline;
