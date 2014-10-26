@@ -13,7 +13,7 @@ var saveEntry = function(item, id, entry, theSentiment) {
     date: item.time,
     body: item.text,
     score: item.score,
-    sentiment: theSentiment || 0
+    sentiment: theSentiment
   };
 
   Word.findOne({_id: id}, function(err, word) {
@@ -36,14 +36,18 @@ var searchItem = function(item) {
         throw error;
       } else {
         var item = JSON.parse(body);
+        console.log(item);
         request('http://localhost:9000/api/words', function(err, res, body) {
           body = JSON.parse(body);
-          for (var i = 0; i < body.length; i++){
-            var re = new RegExp(body[i].word);
-            if (re.test(item.text)) {
-              var theSentiment = sentiment(item.text);
-              saveEntry(item, body[i]._id, body[i].word, theSentiment);
-            }
+          if (item !== null || item['type'] === 'story' || item['type'] === 'poll' || item['type'] === 'comment' || item['type'] === 'job' || item['type'] === 'pollopt') {
+            for (var i = 0; i < body.length; i++){
+              var re = new RegExp(body[i].word);
+              if (re.test(item.text)) {
+                var theSentiment = sentiment(item.text);
+                console.log('Item: ',item.id);
+                saveEntry(item, body[i]._id, body[i].word, theSentiment);
+              }
+            } 
           }
         })
       }
@@ -63,7 +67,7 @@ exports.watchData = function(req, res, next) {
         if (currentMax > startPoint) {
           var newItemCount = currentMax - startPoint;
           for(var i=0; i<newItemCount; i++){
-            var currentItem = (newItemCount + i);
+            var currentItem = (startPoint + i);
             searchItem(currentItem);
           }
           startPoint = currentMax;
