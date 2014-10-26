@@ -181,10 +181,19 @@ textarea:focus, input:focus{
 	display: inline;
 	float: right;
 	padding: 0px;
+	margin-right: 0px;
 }
 .dropdown-menu {
 	left: -15px;
 	top:-5px;
+}
+.sentimentNode {
+  padding: 3px;
+  border-radius: 15px;
+  color: white;
+  text-align: center;
+    background-color: #14CC6F;
+
 }
 .profilePhoto {
 	border-radius: 100%;
