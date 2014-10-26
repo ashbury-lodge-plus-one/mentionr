@@ -9,8 +9,8 @@ angular.module('mentionrApp')
     var populateWordsBar = function(user){
       $http.get('/api/users/'+user).success(function(words){
         return words;
-      })
-    }
+      });
+    };
 
     //Get Request for the Word Visualiser - Trigger on Click of Word from Left Bar
     //Returned Object with x array corresponding y array and total length
@@ -37,31 +37,31 @@ angular.module('mentionrApp')
         
         var array = [];
         
-        for (var i = 0; i < Math.ceil(days); i++) {
-          var d = dateMin + i*60*60*24;
+        for (var j = 0; j < Math.ceil(days); j++) {
+          var d = dateMin + j*60*60*24;
           var d2 = new Date(d*1000);
           var d3 = d2.getMonth() + '/' + d2.getDate() + '/' + d2.getFullYear();
           if (collateDates[d3] === undefined) {
-
-            array.push({date: d3, data: {count: 0, urls: []}})
+            array.push({date: d3, data: {count: 0, urls: []}});
           } else {
-            
-            array.push({date: d3, data: collateDates[d3]})
+            array.push({date: d3, data: collateDates[d3]});
           }
         }
         
         output.all = collateDates;
-        for (var i = 0; i < array.length; i++) {
-          output.x.push(array[i].date);
-          output.y.push(array[i].data.count);
-        };
+        for (var ii = 0; ii < array.length; ii++) {
+          output.x.push(array[ii].date);
+          output.y.push(array[ii].data.count);
+        }
         
         return output;
-    }
+    });
+    
+    };
     
     // Public API here
     return {
       populateVisualizer: populateVisualizer,
       populateWordsBar: populateWordsBar
-      }
+      };
   });
