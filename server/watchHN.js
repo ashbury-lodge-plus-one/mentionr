@@ -6,6 +6,7 @@ var startPoint = 8510405; // Arbirtary...
 var historyPoint = 8365500;
 
 var saveEntry = function(item, id, entry, theSentiment) {
+  console.log('saving...');
   var article = {
     title: item.title,
     storyUrl: item.url,
@@ -112,7 +113,7 @@ exports.watchData = function(req, res, next) {
 
 exports.historyData = function(id, word) {
   for (var i = historyPoint; i < startPoint; i++) {
-    request('https://hacker-news.firebaseio.com/v0/item/' + word + '.json',
+    request('https://hacker-news.firebaseio.com/v0/item/' + i + '.json',
       function(error, response, body) {
         if (error) {
           throw error;
