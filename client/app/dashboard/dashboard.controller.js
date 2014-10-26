@@ -2,24 +2,21 @@
 
 angular.module('mentionrApp')
   .controller('DashboardCtrl', function ($scope, visualizationData, Auth, dashboardFactory) {
-  	console.log(Auth.getCurrentUser())
     $scope.isLoggedIn = Auth.isLoggedIn;
     $scope.isAdmin = Auth.isAdmin;
     $scope.getCurrentUser = Auth.getCurrentUser();
 
 
-    $scope.allMentions = visualizationData.all
+    $scope.allMentions = visualizationData.all;
     if (visualizationData.x.length === 1) {
-      visualizationData.x.unshift('10/24/2014')
-      visualizationData.y.unshift('0')
+      visualizationData.x.unshift('10/24/2014');
+      visualizationData.y.unshift('0');
     }
 
     $scope.submit = function(){
-      var userId = $scope.getCurrentUser.userId || 1;
-      console.log("word",$scope.wordToSubmit);
-      console.log("ID:",userId)
+      var userId = $scope.getCurrentUser.userId;
       dashboardFactory.submitWord($scope.wordToSubmit,userId);
-    }
+    };
 
   	$scope.WordChart = {
       labels : visualizationData.x,
