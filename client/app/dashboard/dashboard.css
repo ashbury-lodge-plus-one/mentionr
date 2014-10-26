@@ -228,6 +228,16 @@ textarea:focus, input:focus{
   padding-right: 25px;
 }
 
+.Neutral {
+  background-color: #a5a5a5;
+}
+.Positive {
+  background-color: #14CC6F;
+}
+.Negative {
+  background-color: #FF270D;
+}
+
 .table-striped > tbody > tr:nth-child(odd) > td, 
 .table-striped > tbody > tr:nth-child(odd) > th {
 	background-color: #f2f2f2;
@@ -249,7 +259,6 @@ textarea:focus, input:focus{
   border-radius: 15px;
   color: white;
   text-align: center;
-    background-color: #14CC6F;
 
 }
 .profilePhoto {

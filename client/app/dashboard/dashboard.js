@@ -14,7 +14,7 @@ angular.module('mentionrApp')
       	controller: 'WordCtrl',
       	resolve: {
       		visualizationData : [ 'dashboardFactory', function(dashboardFactory) {
-          	return dashboardFactory.populateVisualizer("544c97b6ed47f0f75a988182").then(function(data){
+          	return dashboardFactory.populateVisualizer("544c9bdf808d429d5c265e06").then(function(data){
           		console.log(data)
     					return data;
             });

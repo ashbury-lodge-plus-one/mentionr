@@ -44,7 +44,7 @@
 						<td><a href="{{mention.url}}">{{mention.body.slice(0, 40)}}...</a></td>
 						<td>{{mention.date*1000 | date: 'MM/dd/yyyy @ h:mma' }}</td>
 						<td>{{mention.by}}</td>
-						<td><div class="sentimentNode">{{mention.sentiment}}</div></td>
+						<td><div class="sentimentNode {{mention.sentiment}}">{{mention.sentiment}}</div></td>
 					</tr>
 				</tbody>
 
