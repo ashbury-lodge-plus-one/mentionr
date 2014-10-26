@@ -40,7 +40,7 @@
 
 				<tbody>
 					<tr ng-repeat="mention in allMentions">
-						<td>Comment</td>
+						<td>{{mention.itemType.charAt(0).toUpperCase() + mention.itemType.slice(1);}}</td>
 						<td><a href="{{mention.url}}">{{mention.body.slice(0, 40)}}...</a></td>
 						<td>{{mention.date*1000 | date: 'MM/dd/yyyy @ h:mma' }}</td>
 						<td>{{mention.by}}</td>
