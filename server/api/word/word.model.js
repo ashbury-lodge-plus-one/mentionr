@@ -12,7 +12,9 @@ var WordSchema = new Schema({
     url: String,
     date: String,
     by: String,
-    sentiment: Number
+    score: Number,
+    type: String,
+    sentiment: String
   }],
 });
 

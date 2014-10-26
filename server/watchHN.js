@@ -29,7 +29,39 @@ var saveEntry = function(item, id, entry, theSentiment) {
     word.save();
   });
 }
-
+var getSentiment = function(string){
+  if(!string || string === undefined){return 'Neutral'}
+  var sent = sentiment(string).score;
+  if(sent > 0){
+    if(sent >= 0 && sent < 3){
+      return "Positive";
+    } else if(sent >= 3 && sent < 6){
+      return "Positive";
+    } else if(sent >= 6 && sent < 9){
+      return "Quite Positive";
+    } else if(sent >= 9 && sent < 12){
+      return "Very Positive";
+    } else if(sent >= 12 && sent < 15){
+      return "Extremely Positive";
+    } else if(sent >= 15){
+      return "Incredibly Positive";
+    }
+  } else if (sent < 0) {
+    if(sent < 0 && sent > -3){
+      return "Negative";
+    } else if(sent <= -3 && sent > -6){
+      return "Quite Negative";
+    } else if(sent <= -6 && sent > -9){
+      return "Very Negative";
+    } else if(sent <= -9 && sent > -12){
+      return "Extremely Negative";
+    } else if(sent <= -12){
+      return "Incredibly Negative";
+    }
+  } else if(sent === 0) {
+      return "Neutral";
+  };
+};
 var searchItem = function(item) {
   request('https://hacker-news.firebaseio.com/v0/item/' + item + '.json', function(error, response, body) {
       if (error) {
@@ -42,8 +74,8 @@ var searchItem = function(item) {
             for (var i = 0; i < body.length; i++){
               var re = new RegExp(body[i].word, 'gi');
               if (re.test(item.text)) {
-                var theSentiment = sentiment(item.text);
-                saveEntry(item, body[i]._id, body[i].word, theSentiment.score);
+                var theSentiment = getSentiment(item.text);
+                saveEntry(item, body[i]._id, body[i].word, theSentiment);
               }
             } 
           }
@@ -89,8 +121,8 @@ exports.historyData = function(id, word) {
           if (item !== null || item.type !== null) {
             var re = new RegExp(word);
             if (re.test(item.text)) {
-              var theSentiment = sentiment(item.text);
-              saveEntry(item, id, word, theSentiment.score);
+              var theSentiment = getSentiment(item.text);
+              saveEntry(item, id, word, theSentiment);
             }
           }
         }

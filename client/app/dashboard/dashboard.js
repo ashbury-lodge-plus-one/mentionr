@@ -14,11 +14,11 @@ angular.module('mentionrApp')
       	controller: 'WordCtrl',
       	resolve: {
       		visualizationData : [ 'dashboardFactory', function(dashboardFactory) {
-        		return dashboardFactory.populateVisualizer('544c8d015b5aa50000c7ef59')
-              .then(function(data){
-      					return data;
-          		});
-          	}]
+          	return dashboardFactory.populateVisualizer("544c8d917874be0c5865113c").then(function(data){
+          		console.log(data)
+    					return data;
+            });
+        	}]
       	}
       });
   });

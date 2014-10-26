@@ -1,8 +1,7 @@
 'use strict';
 
 angular.module('mentionrApp')
-  .controller('WordCtrl',
-    function ($location, $scope, visualizationData, Auth, dashboardFactory) {
+  .controller('WordCtrl', function ($location, $scope, visualizationData, Auth, dashboardFactory) {
       $scope.isLoggedIn = Auth.isLoggedIn;
       $scope.isAdmin = Auth.isAdmin;
       $scope.getCurrentUser = Auth.getCurrentUser();

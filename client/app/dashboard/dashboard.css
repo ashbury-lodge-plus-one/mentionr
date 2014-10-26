@@ -225,6 +225,7 @@ textarea:focus, input:focus{
 }
 .table > tbody >  tr > td {
   padding-left: 25px;
+  padding-right: 25px;
 }
 
 .table-striped > tbody > tr:nth-child(odd) > td, 
