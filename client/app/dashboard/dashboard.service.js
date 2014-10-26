@@ -16,7 +16,8 @@ angular.module('mentionrApp')
     //Returned Object with x array corresponding y array and total length
     var populateVisualizer = function(wordId){
       // return {x:[1,2,3,4,5,6,7], y:[2,4,3,5,4,2,1], all: {}, total: 21}
-      return $http.get('/api/words/544c490f35fa6b79d3686355')
+
+      return $http.get('/api/words/544c5f7509f77ee647ca3f16')
         .then(function(stats){
           stats = stats.data;
           var collateDates = {};
@@ -28,7 +29,7 @@ angular.module('mentionrApp')
             dateMin = stats.articles[i].date < dateMin ? stats.articles[i].date : dateMin;
             dateMax = stats.articles[i].date > dateMax ? stats.articles[i].date : dateMax;
             var temp = new Date(stats.articles[i].date*1000);
-            var dateTime = temp.getMonth() + '/' + temp.getDate() + '/' + temp.getFullYear();
+            var dateTime = (temp.getMonth()+1) + '/' + temp.getDate() + '/' + temp.getFullYear();
             if (collateDates[dateTime] === undefined) {
               collateDates[dateTime] = {count: 1, urls: [stats.articles[i].url]};
             } else {
@@ -49,7 +50,7 @@ angular.module('mentionrApp')
             var d = parseFloat(dateMin) + (j*60*60*24);
             var d2 = new Date(d*1000);
             console.log("d2", d2)
-            var d3 = d2.getMonth() + '/' + d2.getDate() + '/' + d2.getFullYear();
+            var d3 = (d2.getMonth()+1) + '/' + d2.getDate() + '/' + d2.getFullYear();
             if (collateDates[d3] === undefined) {
               array.push({date: d3, data: {count: 0, urls: []} });
             } else {
