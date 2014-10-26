@@ -26,6 +26,8 @@ server.listen(config.port, config.ip, function () {
   console.log('Express server listening on %d, in %s mode', config.port, app.get('env'));
 });
 
+// Period Tasks
+// TODO: Setup as CRON
 setInterval(mail.sendMail, 1000 * 60 * 60);
 watch.watchData();
 
