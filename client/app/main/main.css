@@ -1,16 +1,19 @@
 .thing-form {
     margin: 20px 0;
 }
-
-#banner {
-    border-bottom: none;
-    margin-top: -20px;
+.top {
+    background-image: url('./assets/images/bg-1.jpg')
 }
 
-#banner h1 {
-    font-size: 60px;
-    line-height: 1;
-    letter-spacing: -1px;
+.MainLogo {
+    font-weight: 600;
+    font-size: 4em;
+}
+
+.textCont {
+    margin: 0 auto;
+    margin-top: 300px;
+    width: 500px;
 }
 
 .hero-unit {
@@ -19,12 +22,46 @@
     color: #F5F5F5;
     text-align: center;
     text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
-    background: #4393B9;
+    background-image: url('../../assets/images/bg-1.jpg')
 }
 
-.footer {
-    text-align: center;
-    padding: 30px 0;
-    margin-top: 70px;
-    border-top: 1px solid #E5E5E5;
+.mainBtn {
+    border: 1px white solid;
+    width: 150px;
+    border-radius: 20px;
+    padding: 0px;
+    float: left;
+    margin: 10px;
+    padding-top: 10px;
+    font-weight: 600;
+
+}
+
+.mainBtn:hover {
+    background-color: black;
+    border: 1px solid black;
+
+}
+.lead {
+    font-family: 'PT Serif', serif;
+    font-style: italic;
+    font-size: 18px;
+}
+
+.mainBtn a {
+    color: white;
+}
+.mainBtn a:hover {
+    color: white;
+     text-decoration: none;    
+}
+.buttons {
+    margin: 0 auto;
+    width: 350px;
+    margin-top: 40px;
+}
+.signup {
+    background-color: #FF6347;
+    border: 1px solid #FF6347 ;
+
 }

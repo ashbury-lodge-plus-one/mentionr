@@ -27,6 +27,77 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'proxima_nova';
+    src: url('./proxima/proximanova-extrabld-webfont.eot');
+    src: url('./proxima/proximanova-extrabld-webfont.eot?#iefix') format('embedded-opentype'),
+         url('./proxima/proximanova-extrabld-webfont.woff') format('woff'),
+         url('./proxima/proximanova-extrabld-webfont.ttf') format('truetype'),
+         url('./proxima/proximanova-extrabld-webfont.svg#proxima_novaextrabold') format('svg');
+    font-weight: 900;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'proxima_nova';
+    src: url('./proxima/proximanova-light-webfont.eot');
+    src: url('./proxima/proximanova-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('./proxima/proximanova-light-webfont.woff') format('woff'),
+         url('./proxima/proximanova-light-webfont.ttf') format('truetype'),
+         url('./proxima/proximanova-light-webfont.svg#proxima_novalight') format('svg');
+    font-weight: 300;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'proxima_nova';
+    src: url('./proxima/proximanova-regular-webfont.eot');
+    src: url('./proxima/proximanova-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('./proxima/proximanova-regular-webfont.woff') format('woff'),
+         url('./proxima/proximanova-regular-webfont.ttf') format('truetype'),
+         url('./proxima/proximanova-regular-webfont.svg#proxima_nova_rgregular') format('svg');
+    font-weight: 500;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'proxima_nova';
+    src: url('./proxima/proximanova-semibold-webfont.eot');
+    src: url('./proxima/proximanova-semibold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('./proxima/proximanova-semibold-webfont.woff') format('woff'),
+         url('./proxima/proximanova-semibold-webfont.ttf') format('truetype'),
+         url('./proxima/proximanova-semibold-webfont.svg#proxima_novasemibold') format('svg');
+    font-weight: 700;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'proxima_novalight_italic';
+    src: url('./proxima/proximanova-lightit-webfont.eot');
+    src: url('./proxima/proximanova-lightit-webfont.eot?#iefix') format('embedded-opentype'),
+         url('./proxima/proximanova-lightit-webfont.woff') format('woff'),
+         url('./proxima/proximanova-lightit-webfont.ttf') format('truetype'),
+         url('./proxima/proximanova-lightit-webfont.svg#proxima_novalight_italic') format('svg');
+    font-weight: 300;
+    font-style: italic;
+
+}
+
+@font-face {
+    font-family: 'proxima_nova';
+    src: url('./proxima/proximanova-regularit-webfont.eot');
+    src: url('./proxima/proximanova-regularit-webfont.eot?#iefix') format('embedded-opentype'),
+         url('./proxima/proximanova-regularit-webfont.woff') format('woff'),
+         url('./proxima/proximanova-regularit-webfont.ttf') format('truetype'),
+         url('./proxima/proximanova-regularit-webfont.svg#proxima_novaregular_italic') format('svg');
+    font-weight: 500;
+    font-style: italic;
+
+}
 /**
  * App-wide Styles
  */
@@ -40,6 +111,7 @@
 body, html {
     height: 100%;
     background-color: #3D444F;
+    font-family: 'proxima_nova';
 
 }
 .ng-scope {

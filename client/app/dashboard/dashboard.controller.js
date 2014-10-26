@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('mentionrApp')
-  .controller('DashboardCtrl', function ($scope, Auth, dashboardFactory) {
+  .controller('DashboardCtrl', function ($scope, Auth, $location, dashboardFactory) {
  
     $scope.isLoggedIn = Auth.isLoggedIn;
     $scope.isAdmin = Auth.isAdmin;
@@ -17,6 +17,6 @@ angular.module('mentionrApp')
     $scope.words = Auth.getCurrentUser().words;
     $scope.logout = function() {
       Auth.logout();
-      $location.path('/login');
+      $location.path('/');
     };  
   });

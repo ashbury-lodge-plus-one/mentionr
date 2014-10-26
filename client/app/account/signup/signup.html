@@ -13,9 +13,8 @@
 
         <div class="form-group" ng-class="{ 'has-success': form.name.$valid && submitted,
                                             'has-error': form.name.$invalid && submitted }">
-          <label>Name</label>
 
-          <input type="text" name="name" class="form-control loginFormInput" ng-model="user.name"
+          <input type="text" name="name"  placeholder="Name" class="form-control loginFormInput" ng-model="user.name"
                  required/>
           <p class="help-block" ng-show="form.name.$error.required && submitted">
             A name is required
@@ -24,9 +23,8 @@
 
         <div class="form-group" ng-class="{ 'has-success': form.email.$valid && submitted,
                                             'has-error': form.email.$invalid && submitted }">
-          <label>Email</label>
 
-          <input type="email" name="email" class="form-control loginFormInput" ng-model="user.email"
+          <input type="email" name="email" class="form-control loginFormInput" placeholder="Email" ng-model="user.email"
                  required
                  mongoose-error/>
           <p class="help-block" ng-show="form.email.$error.email && submitted">
@@ -42,9 +40,8 @@
 
         <div class="form-group" ng-class="{ 'has-success': form.password.$valid && submitted,
                                             'has-error': form.password.$invalid && submitted }">
-          <label>Password</label>
 
-          <input type="password" name="password" class="form-control loginFormInput" ng-model="user.password"
+          <input type="password" name="password" placeholder="Password" class="form-control loginFormInput" ng-model="user.password"
                  ng-minlength="3"
                  required
                  mongoose-error/>
