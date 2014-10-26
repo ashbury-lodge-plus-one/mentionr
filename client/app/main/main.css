@@ -131,6 +131,11 @@
 }
 .featureLabel:hover {
 }
+
+.chevron {
+    position: absolute;
+    top:95%;
+}
 .featureLabel {
     width: 100%;
     color: white;
