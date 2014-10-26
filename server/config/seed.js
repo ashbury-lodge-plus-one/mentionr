@@ -6,19 +6,11 @@ var Word = require('../api/word/word.model');
 // User.find({}).remove(function() {
 //   User.create({
 //     provider: 'local',
-//     name: 'Test User',
-//     email: 'test@test.com',
-//     password: 'test'
-//   }, {
-//     provider: 'local',
 //     role: 'admin',
 //     name: 'Admin',
 //     email: 'admin@admin.com',
 //     password: 'admin',
-//     words: [
-//       {word: 'Google'},
-//       {word: 'Paypal'}
-//     ]
+//     words: []
 //   }, function() {
 //       console.log('finished populating users');
 //     }
@@ -27,7 +19,7 @@ var Word = require('../api/word/word.model');
 
 // Word.find({}).remove(function() {
 //   Word.create({
-//     word: 'the',
+//     word: 'javascript',
 //     articles: []
 
 //   }, function() {
