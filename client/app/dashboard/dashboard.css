@@ -67,6 +67,7 @@
 }
 #addInput {
 	border: none;
+	width: 110px;
 	background-color: transparent; 
 	color: rgba(255,255,255,.3);
 	margin-left: 10px;
