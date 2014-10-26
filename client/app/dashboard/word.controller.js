@@ -12,9 +12,9 @@ angular.module('mentionrApp')
       
       if (visualizationData.x.length < 2) {
         var temp = new Date(Date.now()-86400000);
-        var temp = new Date(Date.now()-2*86400000) 
-        var dt = temp.getMonth() + '/' + temp.getDate() + '/' + temp.getFullYear();
-        var dt2 = temp.getMonth() + '/' + temp.getDate() + '/' + temp.getFullYear();
+        var temp2 = new Date(Date.now()-2*86400000) 
+        var dt = temp.getMonth() +1 + '/' + temp.getDate() + '/' + temp.getFullYear();
+        var dt2 = temp2.getMonth() + 1 + '/' + temp2.getDate() + '/' + temp2.getFullYear();
         visualizationData.x.unshift(dt);
         visualizationData.y.unshift('0');
         visualizationData.x.unshift(dt2);
