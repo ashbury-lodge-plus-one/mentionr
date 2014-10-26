@@ -6,7 +6,6 @@ var startPoint = 8510405; // Arbirtary...
 var historyPoint = 8365500;
 
 var saveEntry = function(item, id, entry, theSentiment) {
-  console.log('saving...');
   var article = {
     title: item.title,
     storyUrl: item.url,
@@ -120,7 +119,7 @@ exports.historyData = function(id, word) {
         } else {
           var item = JSON.parse(body);
           if (item && item.type !== undefined) {
-            var re = new RegExp(word);
+            var re = new RegExp(word, 'gi');
             if (re.test(item.text)) {
               var theSentiment = getSentiment(item.text);
               saveEntry(item, id, word, theSentiment);
