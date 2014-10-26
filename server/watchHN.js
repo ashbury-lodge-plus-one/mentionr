@@ -2,7 +2,7 @@ var request = require('request');
 var mongoose = require('mongoose');
 var sentiment = require('sentiment');
 var Word = require('./api/word/word.model');
-var startPoint = 8510122 - 75; // Arbirtary...
+var startPoint = 8510122; // Arbirtary...
 var historyPoint = 8365500;
 
 var saveEntry = function(item, id, entry, theSentiment) {
@@ -42,7 +42,6 @@ var searchItem = function(item) {
               var re = new RegExp(body[i].word);
               if (re.test(item.text)) {
                 var theSentiment = sentiment(item.text);
-                console.log(theSentiment.score);
                 saveEntry(item, body[i]._id, body[i].word, theSentiment.score);
               }
             } 
@@ -79,7 +78,6 @@ exports.watchData = function(req, res, next) {
 };
 
 exports.historyData = function(id, word) {
-  console.log('test');
   for (var i = historyPoint; i < startPoint; i++) {
     request('https://hacker-news.firebaseio.com/v0/item/' + word + '.json',
       function(error, response, body) {
