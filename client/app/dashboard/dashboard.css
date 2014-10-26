@@ -126,7 +126,8 @@ textarea:focus, input:focus{
 .wordIcon {
 	display: inline;
 	float: left;
-	font-size: 30px;
+	font-size: 20px !important;
+	line-height: 18px;
 }
 
 .wordTitle {
@@ -137,6 +138,7 @@ textarea:focus, input:focus{
 
 .leftIcon {
 	display: inline;
+	float: left
 }
 
 .table > thead > tr > th,
@@ -157,6 +159,7 @@ textarea:focus, input:focus{
 	padding-left: 25px;
 
 }
+
 .table > thead > tr > th{
   font-size: .8em !important;
   padding-top: 20px;
@@ -174,22 +177,27 @@ textarea:focus, input:focus{
 }
 /* profile details*/
 .userDetails {
+	margin: -20px;
 	display: inline;
 	float: right;
 	padding: 0px;
 }
-
+.dropdown-menu {
+	left: -15px;
+	top:-5px;
+}
 .profilePhoto {
 	border-radius: 100%;
 	width: 25px;
 	margin: 0px;
+	margin-left: 10px;
 	float: right;
 	display: inline;
 }
 
 .username {
 	font-size: .9em;
-	line-height: 25spx;
+	line-height: 22px;
 	margin-right: 10px;
 	display: inline;
 }

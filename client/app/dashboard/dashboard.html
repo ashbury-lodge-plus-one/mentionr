@@ -1,5 +1,5 @@
 <div class="col-sm-2 leftDrawer">
-	<h2 class="logo">/mentioner/g</h2>
+	<h2 class="logo">/mentionr/g</h2>
 	<div class="words">
 		<h3 class="wordsTitle">WORDS</h3>
 		<div class="wordItem">
@@ -23,14 +23,29 @@
 		<div class="col-sm-12 mainTop">
 			<div class="topBar">
 				<div class="leftIcon">
-					<span class="glyphicon glyphicon-dashboard" class="wordIcon"></span>
+					<span class="glyphicon glyphicon-dashboard wordIcon"></span>
 					<p class="wordTitle">Google</p>
 				</div>
 				<div class="userDetails">
-					<p class="username">Spencer Handley</p>
-					<img class="profilePhoto" src="./assets/images/profilephoto.jpg"></img>
+					<div class="dropdown username">
+					  <p class="dropdown-toggle " type="button" id="dropdownMenu1" data-toggle="dropdown">
+					  <img class="profilePhoto" src="./assets/images/profile.jpg"></img>
+					    Spencer Handley
+					    <span class="caret"></span>
+					  </p>
+					  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+					    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Signout</a></li>
+					    <li role="presentation" class="divider"></li>
+					    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Settings</a></li>
+
+					  </ul>
+					</div>
+					
 				</div>
 
+			</div>
+			<div class="graph">
+				 <canvas linechart options="myChartOptions" responsive=true data="PostChart"  width="500" height="300"></canvas>
 			</div>
 		</div>
 		<div class="col-sm-12 mainBottom">
