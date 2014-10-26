@@ -15,7 +15,7 @@ angular.module('mentionrApp')
         })
         .then( function() {
           // Logged in, redirect to home
-          $location.path('/dashboard');
+          $location.path('/dashboard/word/123');
         })
         .catch( function(err) {
           $scope.errors.other = err.message;
