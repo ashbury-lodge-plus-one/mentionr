@@ -268,6 +268,10 @@ angular.module('mentionrApp')
       return $http.get('/api/words/' + wordId)
         .then(function(stats) {
           stats = stats.data;
+          if (stats.articles.length === 0) {
+            return {x: [], y: [], all: [], total: 0}
+          }
+          console.log(stats);
           var collateDates = {};
           var output = {x: [], y: [], all: stats.articles, total: stats.articles.length};
           var dateMin = stats.articles[0].date;

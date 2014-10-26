@@ -10,8 +10,14 @@ angular.module('mentionrApp')
       $rootScope.word = visualizationData.word;
       $scope.allMentions = visualizationData.all;
       
-      if (visualizationData.x.length === 1) {
-        visualizationData.x.unshift('10/24/2014');
+      if (visualizationData.x.length < 2) {
+        var temp = new Date(Date.now()-86400000);
+        var temp = new Date(Date.now()-2*86400000) 
+        var dt = temp.getMonth() + '/' + temp.getDate() + '/' + temp.getFullYear();
+        var dt2 = temp.getMonth() + '/' + temp.getDate() + '/' + temp.getFullYear();
+        visualizationData.x.unshift(dt);
+        visualizationData.y.unshift('0');
+        visualizationData.x.unshift(dt2);
         visualizationData.y.unshift('0');
       }
 
