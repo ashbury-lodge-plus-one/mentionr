@@ -27,7 +27,7 @@ User.find({}).remove(function() {
 
 // Word.find({}).remove(function() {
 //   Word.create({
-//     word: 'the',
+//     word: 'javascript',
 //     articles: []
 //   }, function() {
 //       console.log('finished populating words');

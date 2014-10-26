@@ -17,6 +17,7 @@ exports.index = function (req, res, next) {
 };
 
 exports.addWord = function(req, res, next) {
+  console.log(req.body.userId);
   Word.findOne({word: req.body.word}, function(err, word) {
     if (err) {
       return next(err);

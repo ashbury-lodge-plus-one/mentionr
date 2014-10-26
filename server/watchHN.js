@@ -2,7 +2,7 @@ var request = require('request');
 var mongoose = require('mongoose');
 var sentiment = require('sentiment');
 var Word = require('./api/word/word.model');
-var startPoint = 8510320; // Arbirtary...
+var startPoint = 8510297; // Arbirtary...
 var historyPoint = 8365500;
 
 var saveEntry = function(item, id, entry, theSentiment) {
