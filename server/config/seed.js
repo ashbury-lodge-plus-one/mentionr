@@ -23,7 +23,6 @@ User.find({}).remove(function() {
 
 Word.find({}).remove(function() {
   Word.create({
-    _id: 1,
     word: 'the',
     articles: []
   }, function() {
