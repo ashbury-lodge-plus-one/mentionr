@@ -19,8 +19,8 @@ angular.module('mentionrApp')
         method: 'POST',
         data: {userId: userId, word: word}
       }).success(function(userData){
-        return userData
-      })
+        return userData;
+      });
     };
 
     //Get Request for the Word Visualiser - Trigger on Click of Word from Left Bar
@@ -29,7 +29,7 @@ angular.module('mentionrApp')
       // return {x:[1,2,3,4,5,6,7], y:[2,4,3,5,4,2,1], all: {}, total: 21}
 
 
-      return $http.get('/api/words/544c5f6b33b633e89ca7b3de')
+      return $http.get('/api/words/544c6b04e1a7202aefb52249')
         .then(function(stats){
           stats = stats.data;
           var collateDates = {};
@@ -58,7 +58,6 @@ angular.module('mentionrApp')
             var d = parseFloat(dateMin) + (j*60*60*24);
             var d2 = new Date(d*1000);
             var d3 = (d2.getMonth()+1) + '/' + d2.getDate() + '/' + d2.getFullYear();
-            console.log("d2", d2)
             if (collateDates[d3] === undefined) {
               array.push({date: d3, data: {count: 0, urls: []} });
             } else {
