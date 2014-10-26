@@ -2,6 +2,7 @@
 
 var Word = require('./word.model');
 var User = require('../user/user.model');
+var fetchData = require('../../watchHN').historyData;
 
 var handleError = function(res, err) {
   return res.json(500, err);
@@ -16,39 +17,44 @@ exports.index = function (req, res, next) {
 };
 
 exports.addWord = function(req, res, next) {
-  Word.find({word: req.body.word}, function(err, word) {
+  Word.findOne({word: req.body.word}, function(err, word) {
     if (err) {
       return next(err);
     }
-    if (word) {
-      User.findById(req.body.userId, function(err, user) {
+    User.findById(req.body.userId, function(err, user) {
+      if (err) {
+        return next(err);
+      }
+      if (!user) {
+        return res.json(401);
+      }
+      if (word) {
         if (user.words.indexOf(word) === -1) {
           user.words.push(word);
         }
-        user.save();
-        res.json(word);
-      });
-    }
-    else {
-      Word.findOne(req.body, function(err, word) {
-        if (err) return handleError(res, err);
-        if (word) res.send(401);
+        // TODO: Remove me, handle on client
+        user.save(function(err, user) {
+          fetchData(word._id, word.word);
+          res.json(user);
+        });
+      } else {
         var newWord = new Word(req.body);
         newWord.save(function(err, word) {
           if (err) {
             return handleError(res, err);
           }
-          User.findById(req.body.userId, function(err, user) {
-            if (user.words.indexOf(word) === -1) {
-              user.words.push(word);
-            }
-            user.save();
-            res.json(word);
+          user.words.push(word);
+          user.save(function(err, user) {
+            fetchData(word._id, word.word);
+
+            delete user.password;
+            delete user.salt;
+            res.json(user);
           });
         });
-      });
-    }
-  })
+      }
+    });
+  });
 }
 
 exports.show = function (req, res, next) {
