@@ -22,5 +22,30 @@
 	</form>
 		</div>
 </div>
-<div class="col-sm-10 rightContainer" ui-view>
+<div class="col-sm-10">
+	<div class="topBar">
+		<div class="leftIcon" ng-if="word">
+			<span class="glyphicon glyphicon-dashboard wordIcon"></span>
+			<p class="wordTitle">{{word.toUpperCase()}}</p>
+		</div>
+		<div class="userDetails">
+			<div class="dropdown username">
+			  <p class="dropdown-toggle " type="button" id="dropdownMenu1" data-toggle="dropdown">
+				<img class="profilePhoto" src="./assets/images/profile.jpg"></img>
+				   {{getCurrentUser.name}}
+			    <span class="caret"></span>
+			  </p>
+			  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+			  	<li ng-show="isLoggedIn()" ng-class="{active: isActive('/logout')}"><a href="" ng-click="logout()">Logout</a></li>
+			    <li role="presentation" class="divider"></li>
+			    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Settings</a></li>
+
+			  </ul>
+			</div>
+		</div>
+	</div>
+	<div class="bodyCont">
+		<div class="rightContainer" ui-view>
+	</div>
+	</div>
 </div>

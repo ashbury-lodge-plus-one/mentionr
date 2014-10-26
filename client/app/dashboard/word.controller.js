@@ -1,17 +1,13 @@
 'use strict';
 
 angular.module('mentionrApp')
-  .controller('WordCtrl', function ($location, $scope, visualizationData, Auth) {
+
+  .controller('WordCtrl', function ($location, $rootScope, $scope, visualizationData, Auth, dashboardFactory) {
       $scope.isLoggedIn = Auth.isLoggedIn;
       $scope.isAdmin = Auth.isAdmin;
       $scope.getCurrentUser = Auth.getCurrentUser();
       $scope.words = Auth.getCurrentUser().words;
-
-      $scope.logout = function() {
-        Auth.logout();
-        $location.path('/login');
-      };    
-
+      $rootScope.word = visualizationData.word;
       $scope.allMentions = visualizationData.all;
       
       if (visualizationData.x.length === 1) {

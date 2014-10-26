@@ -12,7 +12,10 @@ angular.module('mentionrApp')
         .then(function(resp) {
           $scope.user.words.push(resp.data);
         });
-    };
-  	
-    $scope.message = 'Hello';
+    $scope.getCurrentUser = Auth.getCurrentUser();
+    $scope.words = Auth.getCurrentUser().words;
+    $scope.logout = function() {
+      Auth.logout();
+      $location.path('/login');
+    };  
   });

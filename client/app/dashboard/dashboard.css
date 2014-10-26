@@ -9,8 +9,14 @@
 .rightContainer {
 	min-height:100%;
 	padding: 0px;
+	overflow: hidden;
 }
-
+.bodyCont {
+	max-height:Calc(100% - 50px);
+	overflow: scroll;
+	margin-left: 0px;
+	width: 100%;
+}
 .logo {
 	border-bottom: 1px solid rgba(255,255,255,.1);
 	margin: -15px;
@@ -23,7 +29,9 @@
 	margin: -15px;
 	padding: 25px;
 }
-
+.col-sm-10 {
+	padding: 0px !important;
+}
 .loginBox {
 	background-color: #212730;
 	color: white;
@@ -175,6 +183,7 @@ textarea:focus, input:focus{
 
 .topBar {
  padding: 20px;
+ color: white;
 }
 .wordItem {
 	margin-top: 15px;
@@ -248,7 +257,7 @@ textarea:focus, input:focus{
   background-color: #a5a5a5;
 }
 .Positive {
-  background-color: #14CC6F;
+  background-color: #56E78D;
 }
 .Negative {
   background-color: #FF270D;
@@ -260,7 +269,8 @@ textarea:focus, input:focus{
 }
 /* profile details*/
 .userDetails {
-	margin: -20px;
+	margin: -25px;
+	margin-bottom: -5px;
 	display: inline;
 	float: right;
 	padding: 0px;

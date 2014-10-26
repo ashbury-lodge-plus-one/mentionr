@@ -29,6 +29,7 @@ angular.module('mentionrApp')
       return $http.get('/api/words/' + wordId)
         .then(function(stats) {
           stats = stats.data;
+          console.log(stats)
           var collateDates = {};
           var output = {x: [], y: [], all: stats.articles, total: stats.articles.length};
           var dateMin = stats.articles[0].date;
@@ -61,7 +62,7 @@ angular.module('mentionrApp')
               array.push({date: d3, data: collateDates[d3]});
             }
           }
-
+          output.word = stats.word
           for (i = 0; i < array.length; i++) {
             output.x.push(array[i].date);
             output.y.push(array[i].data.count);
