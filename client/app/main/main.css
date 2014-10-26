@@ -15,14 +15,17 @@
 }
 
 .hero-unit {
+      display: block;
     position: relative;
     padding: 30px 15px;
     color: #F5F5F5;
     text-align: center;
     text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
     background-image: url('../../assets/images/bg-1.jpg');
-    background-size: auto 100%;
+    background-size:  cover;
     background-repeat: no-repeat;
+    background-position: 50%;
+
 
 
 }
@@ -83,11 +86,25 @@
     margin: 0px;
     background-image: url('../../assets/images/graph.jpg');
     background-repeat: no-repeat;
-    background-size: auto 100%;
+    background-size: 100% 100%;
     min-height: 400px;
 }
+.service1 {
+    margin: 0px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    min-height: 400px;
+    background-image: url('../../assets/images/graph1.jpg');
+}
+.service2 {
+    margin: 0px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    min-height: 400px;
+    background-image: url('../../assets/images/graph2.jpg');
+}
 .graphCont {
-    background-color: transparent;
+    background-color: rgba(0,0,0,.6);
     position: absolute;
     right: 0px;
     width: 100%;
@@ -117,8 +134,10 @@
     width: 100%;
     color: white;
     position: absolute;
-    margin-top: 150px;
+    margin-top: 180px;
+    font-size: 20px;
     text-align: center;
+   
 }
 
 .pricing {
@@ -133,7 +152,13 @@
     text-align: center;
     padding-top: 90px;
 }
-
+.titleLink {
+    color: white;
+}
+.titleLink:hover {
+    text-decoration: none;
+    color: white;
+}
 
 .price {background-color: #f5f5f5; border: 1px #e5e5e5 solid; border-radius: 3px; margin-bottom: 60px; }
 .priceTitle {background-color: #d8d8d8; padding:10px; text-align: center; color: white; }
