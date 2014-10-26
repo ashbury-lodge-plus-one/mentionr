@@ -9,12 +9,11 @@ angular.module('mentionrApp')
         controller: 'DashboardCtrl',
         resolve: {
         	visualizationData : [ 'dashboardFactory', function(dashboardFactory) {
-        		return dashboardFactory.populateVisualizer()
+        		
+        		return dashboardFactory.populateVisualizer().then(function(data){
+					return data
+        		});
         		// DONT FORGET TO PUT THIS BACK IN
-        		// .then(function(data){
-
-        		// 	return data
-        		// })
         	}]
         }
       });
