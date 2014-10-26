@@ -177,7 +177,8 @@ textarea:focus, input:focus{
  padding: 20px;
 }
 .wordItem {
-	margin-bottom: 15px;
+	margin-top: 15px;
+	margin-left: -15px;
 }
 .wordIcon {
 	display: inline;
@@ -186,6 +187,13 @@ textarea:focus, input:focus{
 	line-height: 18px;
 }
 
+.deleteBtn {
+	font-size: 10px;
+	color: rgba(255,255,255,.4)
+}
+.deleteBtn:hover {
+	color: rgba(255,255,255,.9)
+}
 .wordTitle {
 	display: inline;
 	margin-left: 5px;
@@ -261,6 +269,9 @@ textarea:focus, input:focus{
   text-align: center;
 
 }
+
+
+
 .profilePhoto {
 	border-radius: 100%;
 	width: 25px;
