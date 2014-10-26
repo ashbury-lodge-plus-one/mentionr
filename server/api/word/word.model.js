@@ -13,7 +13,7 @@ var WordSchema = new Schema({
     date: String,
     by: String,
     score: Number,
-    type: String,
+    itemType: String,
     sentiment: String
   }],
 });

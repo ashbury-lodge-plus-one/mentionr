@@ -2,7 +2,7 @@ var request = require('request');
 var mongoose = require('mongoose');
 var sentiment = require('sentiment');
 var Word = require('./api/word/word.model');
-var startPoint = 8510297; // Arbirtary...
+var startPoint = 8510405; // Arbirtary...
 var historyPoint = 8365500;
 
 var saveEntry = function(item, id, entry, theSentiment) {
@@ -13,7 +13,7 @@ var saveEntry = function(item, id, entry, theSentiment) {
     by: item.by,
     date: item.time,
     body: item.text,
-    type: item.type,
+    itemType: item.type,
     sentiment: theSentiment
   };
 
@@ -22,7 +22,7 @@ var saveEntry = function(item, id, entry, theSentiment) {
       return new Error(err);
     }
     if (!word) {
-      var newWord = new Word({_id: id, articles: [article]});
+      var newWord = new Word({articles: [article]});
       return newWord.save();
     }
     word.articles.push(article);
@@ -60,7 +60,7 @@ var getSentiment = function(string){
     }
   } else if(sent === 0) {
       return "Neutral";
-  };
+  }
 };
 var searchItem = function(item) {
   request('https://hacker-news.firebaseio.com/v0/item/' + item + '.json', function(error, response, body) {
