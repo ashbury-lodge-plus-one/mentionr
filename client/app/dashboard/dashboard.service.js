@@ -27,7 +27,8 @@ angular.module('mentionrApp')
     //Returned Object with x array corresponding y array and total length
 
     var populateVisualizer = function(wordId){
-      return $http.get('/api/words/544c622a5a6c2b534900717a')
+
+      return $http.get('/api/words/544c5f6b33b633e89ca7b3de')
         .then(function(stats){
           stats = stats.data;
           var collateDates = {};

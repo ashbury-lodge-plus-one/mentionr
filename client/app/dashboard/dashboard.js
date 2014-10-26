@@ -10,7 +10,7 @@ angular.module('mentionrApp')
         resolve: {
         	visualizationData : [ 'dashboardFactory', function(dashboardFactory) {
         		return dashboardFactory.populateVisualizer().then(function(data){
-					return data
+					return data;
         		});
         	}]
         }
