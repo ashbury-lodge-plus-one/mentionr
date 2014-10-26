@@ -28,7 +28,7 @@ exports.create = function (req, res, next) {
 
 exports.show = function (req, res, next) {
   var word = req.params.id;
-  Word.findId(word, function (err, word) {
+  Word.findById(word, function (err, word) {
     if (err) return next(err);
     if (!word) return res.send(401);
     res.json(word);

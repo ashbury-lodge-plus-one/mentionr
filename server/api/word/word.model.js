@@ -6,9 +6,8 @@ var Schema = mongoose.Schema;
 var WordSchema = new Schema({
   word: String,
   articles: [{
-    story: String,
+    title: String,
     storyUrl: String,
-    name: String,
     body: String,
     url: String,
     date: String,
