@@ -70,7 +70,7 @@ var searchItem = function(item) {
         var item = JSON.parse(body);
         request('http://localhost:9000/api/words', function(err, res, body) {
           body = JSON.parse(body);
-          if (item !== null || item.type !== null) {
+          if (item && item.type !== null) {
             for (var i = 0; i < body.length; i++){
               var re = new RegExp(body[i].word, 'gi');
               if (re.test(item.text)) {
