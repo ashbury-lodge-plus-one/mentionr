@@ -6,10 +6,21 @@
 angular.module('mentionrApp')
   .factory('dashboardFactory', function ($http) {
     // Service logic
+    //Is this needed or is this being found on log in?
     var populateWordsBar = function(user){
       $http.get('/api/users/'+user).success(function(words){
         return words;
       });
+    };
+
+    var submitWord = function(word,userId){
+      $http({
+        url: '/api/words/',
+        method: 'POST',
+        data: {userId: userId, word: word}
+      }).success(function(userData){
+        return userData
+      })
     };
 
     //Get Request for the Word Visualiser - Trigger on Click of Word from Left Bar
@@ -66,6 +77,7 @@ angular.module('mentionrApp')
     // Public API here
     return {
       populateVisualizer: populateVisualizer,
-      populateWordsBar: populateWordsBar
+      populateWordsBar: populateWordsBar,
+      submitWord: submitWord
       };
   });
