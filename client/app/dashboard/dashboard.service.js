@@ -4,7 +4,7 @@
 
 
 angular.module('mentionrApp')
-  .factory('dashboard', function ($http) {
+  .factory('dashboardFactory', function ($http) {
     // Service logic
     var populateWordsBar = function(user){
       $http.get('/api/users/'+user).success(function(words){
@@ -17,7 +17,7 @@ angular.module('mentionrApp')
     var populateVisualizer = function(wordId){
       $http.get('/api/words/'+wordId).success(function(stats){
         var collateDates = {};
-        var output = {x: [], y: [], all: [], total: stats.length};
+        var output = {x: [], y: [], all: stats, total: stats.length};
         var dateMin = stats[0].date;
         var dateMax = stats[0].date;
         for (var i = 0; i < stats.length; i++) {
@@ -48,7 +48,6 @@ angular.module('mentionrApp')
           }
         }
         
-        output.all = collateDates;
         for (var ii = 0; ii < array.length; ii++) {
           output.x.push(array[ii].date);
           output.y.push(array[ii].data.count);
