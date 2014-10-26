@@ -181,6 +181,7 @@ angular.module('mentionrApp')
     bannedWords["yourself"] = 1;
     bannedWords["yourselves"] = 1;
 
+
     var populateWordsBar = function(user){
       $http.get('/api/users/'+user).success(function(words){
         return words;
