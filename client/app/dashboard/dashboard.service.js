@@ -37,7 +37,7 @@ angular.module('mentionrApp')
             }
           }
         
-          var days = (dateMax-dateMin)/(1000*60*60*24);
+          var days = (dateMax-dateMin)/(60*60*24);
           console.log("DAYS:",days)
           
           var array = [];
@@ -47,7 +47,6 @@ angular.module('mentionrApp')
             var test = new Date(parseInt(dateMin)*1000)
             console.log(test.toDateString())
             var d = parseFloat(dateMin) + (j*60*60*24);
-            console.log(d, "WHY ARE YOU GROWING!");
             var d2 = new Date(d*1000);
             console.log("d2", d2)
             var d3 = d2.getMonth() + '/' + d2.getDate() + '/' + d2.getFullYear();

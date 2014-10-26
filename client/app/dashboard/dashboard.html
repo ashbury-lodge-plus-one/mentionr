@@ -45,7 +45,7 @@
 
 			</div>
 			<div class="graph">
-				<canvas linechart options="myChartOptions" responsive=true data="WordChart"  width="500" height="300"></canvas>
+				<canvas linechart options="myChartOptions" responsive=true data="WordChart"  width="800" height="300"></canvas>
 			</div>
 		</div>
 		<div class="col-sm-12 mainBottom">
@@ -62,13 +62,13 @@
 				</thead>
 
 				<tbody>
-					<tr >
-						<td><a href="#/top-stories/" class="storyLink">blah</a></td>
-						<td>blah</td>
-						<td>blah</td>
-						<td>blah</td>
-						<td>blah</td>
-						<td><div class="sentimentNode">blah</div></td>
+					<tr ng-repeat="mention in allMentions">
+						<td><a href="#/top-stories/" class="storyLink">Mention Story</a></td>
+						<td><a href="{{mention.url}}">Comment</a></td>
+						<td>{{moment(parseFloat(mention.date)).format('d/d/YYYY')}}</td>
+						<td>{{mention.by}}</td>
+						<td>5</td>
+						<td><div class="sentimentNode">{{mention.sentiment}}</div></td>
 					</tr>
 					<tr >
 						<td><a href="#/top-stories/" class="storyLink">blah</a></td>

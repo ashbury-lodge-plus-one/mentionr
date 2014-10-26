@@ -3,6 +3,7 @@
 angular.module('mentionrApp')
   .controller('DashboardCtrl', function ($scope, visualizationData) {
   	console.log(visualizationData)
+  	$scope.allMentions = visualizationData.all
 	$scope.WordChart = {
 	    labels : visualizationData.x,
 	    datasets : [
