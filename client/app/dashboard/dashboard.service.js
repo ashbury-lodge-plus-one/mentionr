@@ -14,15 +14,10 @@ angular.module('mentionrApp')
 
     //Get Request for the Word Visualiser - Trigger on Click of Word from Left Bar
     //Returned Object with x array corresponding y array and total length
-    var populateVisualizer = function(wordId){
+    var populateVisualizer = function(wordId) {
       // return {x:[1,2,3,4,5,6,7], y:[2,4,3,5,4,2,1], all: {}, total: 21}
       
-      // REMOVE ME, IM A DIRTY HACK!
-      wordId = $http.get('/api/words').success(function(err, words) {
-        return words.data[0]._id;
-      });
-
-      return $http.get('/api/words/' + wordId)
+      return $http.get('/api/words/544c653b575199ebeb1a75cd')
         .then(function(stats){
           stats = stats.data;
           var collateDates = {};
@@ -63,7 +58,6 @@ angular.module('mentionrApp')
           }
           return output;
         });
-      
     };
     
     // Public API here
