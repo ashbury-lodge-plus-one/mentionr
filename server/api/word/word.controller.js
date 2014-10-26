@@ -35,9 +35,7 @@ exports.addWord = function(req, res, next) {
         user.save(function(err, user) {
           fetchData(word._id, word.word);
 
-          delete user.password;
-          delete user.salt;
-          res.json(user);
+          res.json(word);
         });
       } else {
         var newWord = new Word(req.body);
@@ -49,9 +47,7 @@ exports.addWord = function(req, res, next) {
           user.save(function(err, user) {
             fetchData(word._id, word.word);
 
-            delete user.password;
-            delete user.salt;
-            res.json(user);
+            res.json(word);
           });
         });
       }

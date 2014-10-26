@@ -12,7 +12,7 @@ angular.module('mentionrApp')
     };
 
     var submitWord = function(word, userId){
-      $http({
+      return $http({
         url: '/api/words/',
         method: 'POST',
         data: {userId: userId, word: word}

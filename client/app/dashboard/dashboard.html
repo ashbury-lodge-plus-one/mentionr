@@ -2,7 +2,7 @@
 	<h2 class="logo"><small>/</small>mentionr<small>/g</small></h2>
 	<div class="words">
 		<h3 class="wordsTitle">WORDS</h3>
-		<div class="wordItem" ng-repeat="word in words">
+		<div class="wordItem" ng-repeat="word in user.words">
 			<span ng-click="" class="glyphicon glyphicon-remove deleteBtn"></span>
 			<a href="/dashboard/word/{{word._id}}"><p class="listWord">{{word.word}}</p></a>
 					<div class="pill">
@@ -16,7 +16,7 @@
 		</div>
 	</div>
 	<div class="addWordDiv">
-	<form ng-submit="submit()">
+	<form ng-submit="submit(wordToSubmit, user._id); wordToSubmit = '';">
 	<span class="glyphicon glyphicon-search"></span>
 		<input type="text" ng-model="wordToSubmit"id="addInput" placeholder="ADD NEW WORD..."></input>
 	</form>

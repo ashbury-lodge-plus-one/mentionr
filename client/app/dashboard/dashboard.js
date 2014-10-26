@@ -14,7 +14,6 @@ angular.module('mentionrApp')
         controller: 'WordCtrl',
         resolve: {
           visualizationData : [ 'dashboardFactory', '$stateParams', function(dashboardFactory, $stateParams) {
-            console.log($stateParams) 
             return dashboardFactory.populateVisualizer($stateParams.wordId)
               .then(function(data){
                 return data;

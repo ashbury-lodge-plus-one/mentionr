@@ -5,13 +5,13 @@ angular.module('mentionrApp')
  
     $scope.isLoggedIn = Auth.isLoggedIn;
     $scope.isAdmin = Auth.isAdmin;
-    $scope.getCurrentUser = Auth.getCurrentUser();
-    $scope.words = Auth.getCurrentUser().words;
+    $scope.user = Auth.getCurrentUser();
 
-
-    $scope.submit = function() {
-      var userId = $scope.getCurrentUser._id;
-      dashboardFactory.submitWord($scope.wordToSubmit, userId);
+    $scope.submit = function(word, id) {
+      dashboardFactory.submitWord(word, id)
+        .then(function(resp) {
+          $scope.user.words.push(resp.data);
+        });
     };
   	
     $scope.message = 'Hello';
