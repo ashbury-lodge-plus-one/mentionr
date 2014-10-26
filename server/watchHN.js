@@ -3,7 +3,7 @@ var mongoose = require('mongoose');
 var sentiment = require('sentiment');
 var Word = require('./api/word/word.model');
 var startPoint = 8510405; // Arbirtary...
-var historyPoint = startPoint;
+var historyPoint = 8499000;
 
 var saveEntry = function(item, id, entry, theSentiment) {
   var article = {
