@@ -7,7 +7,7 @@ var handleError = function(res, err) {
 };
 
 exports.index = function (req, res, next) {
-  Word.find({}, '-articles', function(err, words) {  // Hold the articles
+  Word.find({}, function(err, words) {  // Hold the articles
     if (err) return next(err);
     if (!words) return res.json(401);
     res.json(words);

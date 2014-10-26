@@ -21,12 +21,13 @@ User.find({}).remove(function() {
   );
 });
 
-// Word.find({}).remove(function() {
-//   Word.create({
-//     word: 'the',
-//     articles: []
-//   }, function() {
-//       console.log('finished populating words');
-//     }
-//   );
-// });
+Word.find({}).remove(function() {
+  Word.create({
+    _id: 1,
+    word: 'the',
+    articles: []
+  }, function() {
+      console.log('finished populating words');
+    }
+  );
+});
