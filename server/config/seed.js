@@ -27,16 +27,9 @@ var Word = require('../api/word/word.model');
 
 // Word.find({}).remove(function() {
 //   Word.create({
-//     word: 'new',
-//     articles: [{
-//       title: 'javascript is fun',
-//       storyUrl: 'https://google.com',
-//       body: 'Stuff goes here...',
-//       url: 'http://anothercoolurl.com',
-//       date: '1414302801',
-//       by: 'Bob',
-//       sentiment: '25'
-//     }]
+//     word: 'the',
+//     articles: []
+
 //   }, function() {
 //       console.log('finished populating words');
 //     }

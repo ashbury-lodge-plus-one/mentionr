@@ -29,15 +29,14 @@ var saveEntry = function(item, id, entry, theSentiment) {
     word.save();
   });
 }
+
 var getSentiment = function(string){
   if(!string || string === undefined){return 'Neutral'}
   var sent = sentiment(string).score;
   if(sent > 0){
     if(sent >= 0 && sent < 3){
       return "Positive";
-    } else if(sent >= 3 && sent < 6){
-      return "Positive";
-    } else if(sent >= 6 && sent < 9){
+    } else if(sent >= 3 && sent < 9){
       return "Quite Positive";
     } else if(sent >= 9 && sent < 12){
       return "Very Positive";
@@ -62,6 +61,7 @@ var getSentiment = function(string){
       return "Neutral";
   }
 };
+
 var searchItem = function(item) {
   request('https://hacker-news.firebaseio.com/v0/item/' + item + '.json', function(error, response, body) {
       if (error) {
