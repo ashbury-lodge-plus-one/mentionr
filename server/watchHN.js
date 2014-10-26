@@ -2,7 +2,7 @@ var request = require('request');
 var mongoose = require('mongoose');
 var sentiment = require('sentiment');
 var Word = require('./api/word/word.model');
-var startPoint = 8509943; // Arbirtary...
+var startPoint = 8510122 - 25; // Arbirtary...
 
 var saveEntry = function(item, id, entry, theSentiment) {
   var article = {
@@ -35,7 +35,6 @@ var searchItem = function(item) {
         throw error;
       } else {
         var item = JSON.parse(body);
-        console.log(item);
         request('http://localhost:9000/api/words', function(err, res, body) {
           body = JSON.parse(body);
           if (item !== null || item.type !== null) {
@@ -43,7 +42,6 @@ var searchItem = function(item) {
               var re = new RegExp(body[i].word);
               if (re.test(item.text)) {
                 var theSentiment = sentiment(item.text);
-                console.log('Item: ',item.id);
                 saveEntry(item, body[i]._id, body[i].word, theSentiment);
               }
             } 
