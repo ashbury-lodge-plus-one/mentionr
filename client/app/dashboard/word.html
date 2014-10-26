@@ -1,0 +1,55 @@
+<div class="col-sm-12 mainTop">
+			<div class="topBar">
+				<div class="leftIcon">
+					<span class="glyphicon glyphicon-dashboard wordIcon"></span>
+					<p class="wordTitle">Google</p>
+				</div>
+				<div class="userDetails">
+					<div class="dropdown username">
+					  <p class="dropdown-toggle " type="button" id="dropdownMenu1" data-toggle="dropdown">
+					  <img class="profilePhoto" src="./assets/images/profile.jpg"></img>
+					   {{getCurrentUser.name}}
+					    <span class="caret"></span>
+					  </p>
+					  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+					  <li ng-show="isLoggedIn()" ng-class="{active: isActive('/logout')}"><a href="" ng-click="logout()">Logout</a></li>
+					    <li role="presentation" class="divider"></li>
+					    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Settings</a></li>
+
+					  </ul>
+					</div>
+					
+				</div>
+
+			</div>
+			<div class="graph">
+				<canvas linechart options="myChartOptions" responsive=true data="WordChart"></canvas>
+			</div>
+		</div>
+		<div class="col-sm-12 mainBottom">
+			<table class="table table-striped">
+				<thead>
+					<tr >
+						<th>Story</th>
+						<th>Comment</th>
+						<th>Date</th>
+						<th>Author</th>
+						<th>Score</th>
+						<th>Sentiment</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<tr ng-repeat="mention in allMentions">
+						<td><a href="#/top-stories/" class="storyLink">Mention Story</a></td>
+						<td><a href="{{mention.url}}">Comment</a></td>
+						<td>{{moment(parseFloat(mention.date)).format('d/d/YYYY')}}</td>
+						<td>{{mention.by}}</td>
+						<td>5</td>
+						<td><div class="sentimentNode">{{mention.sentiment}}</div></td>
+					</tr>
+				</tbody>
+
+			</table>
+
+		</div>
