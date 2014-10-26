@@ -190,7 +190,8 @@ angular.module('mentionrApp')
 
     var submitWord = function(word, userId){
       if (bannedWords[word]) {
-        alert("Word not allowed.");
+        swal({type: 'warning',
+            title: "Word not allowed"});
         return;
       }
       return $http({
